@@ -1,0 +1,26 @@
+[
+    {
+        "id":  1,
+        "zdjecie":  "octopus underwater",
+        "emoji":  "🐙",
+        "zajawka":  "Ośmiornica ma *trzy serca* i *niebieską krew*",
+        "tytul":  "Kosmita z oceanu",
+        "tekst":  "Ośmiornica ma **trzy serca**. Dwa pompują krew przez skrzela, a trzecie rozprowadza ją po reszcie ciała. Co ciekawe, główne serce **przestaje bić, gdy ośmiornica płynie** – dlatego woli pełzać, bo pływanie szybko ją męczy.\n\nJej krew jest **niebieska**, bo tlen przenosi w niej miedź, a nie żelazo jak u nas. Taka krew lepiej sprawdza się w zimnej wodzie, gdzie tlenu jest mało."
+    },
+    {
+        "id":  2,
+        "zdjecie":  "honey jar",
+        "emoji":  "🍯",
+        "zajawka":  "Miód z egipskich grobowców *przetrwał 3000 lat*",
+        "tytul":  "Jedzenie, które się nie psuje",
+        "tekst":  "Archeolodzy znajdowali w egipskich grobowcach naczynia z miodem sprzed **około 3000 lat** – i miód wciąż nie był zepsuty.\n\nTo zasługa jego składu: ma **bardzo mało wody**, jest kwaśny, a pszczoły dodają do niego enzym, z którego powstaje odrobina **nadtlenku wodoru**. Bakterie i pleśnie nie mają w nim szans. Skrystalizowany miód wystarczy delikatnie podgrzać."
+    },
+    {
+        "id":  3,
+        "zdjecie":  "eiffel tower",
+        "emoji":  "🗼",
+        "zajawka":  "Wieża Eiffla latem jest *wyższa niż zimą*",
+        "tytul":  "Rosnąca wieża w Paryżu",
+        "tekst":  "Wieża Eiffla jest zbudowana z żelaza, a metal **rozszerza się pod wpływem ciepła**. W upalne dni wieża może urosnąć nawet o **około 15 centymetrów**.\n\nSłońce nagrzewa jedną jej stronę mocniej niż drugą, więc czubek **delikatnie odchyla się od słońca**. Zimą, gdy metal się kurczy, wieża wraca do swojego zwykłego wzrostu."
+    }
+]

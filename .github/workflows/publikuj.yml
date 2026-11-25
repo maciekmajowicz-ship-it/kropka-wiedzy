@@ -1,0 +1,38 @@
+name: Codzienny post na Instagram
+
+on:
+  schedule:
+    # 16:00 i 17:00 UTC = 18:00 w Polsce (latem i zimą); skrypt sam wybiera właściwą godzinę
+    - cron: "0 16,17 * * *"
+  workflow_dispatch: # ręczne uruchomienie z zakładki Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publikuj
+
+jobs:
+  publikuj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Opublikuj post
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/output
+        # ręczne uruchomienie publikuje od razu, harmonogram tylko o 18:00
+        run: node publikuj.js ${{ github.event_name == 'schedule' && '--auto' || '' }}
+
+      - name: Zapisz, co zostało opublikowane
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add opublikowane.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Opublikowano post" && git push)

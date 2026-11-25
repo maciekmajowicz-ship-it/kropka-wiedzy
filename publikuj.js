@@ -1,7 +1,8 @@
-// Publikuje post (karuzela 2 zdjęć) na Instagramie.
-// Wymaga: IG_TOKEN, IG_USER_ID, BASE_URL (publiczny adres folderu output/) – z .env albo zmiennych środowiska
-//   node publikuj.js --auto     -> harmonogram: publikuje tylko o pełnych godzinach z GODZINY (czas PL)
-//   node publikuj.js            -> publikuje od razu następną ciekawostkę
+// Publikuje posty (karuzela 2 zdjęć) na Instagramie i – jeśli skonfigurowano – na Facebooku.
+// Wymaga: IG_TOKEN, IG_USER_ID, BASE_URL (publiczny adres folderu output/); opcjonalnie FB_PAGE_ID + FB_PAGE_TOKEN
+//   node publikuj.js --auto     -> harmonogram: ciekawostka o 10, 13, 16, 19 i 22 (czas PL)
+//   node publikuj.js --newsy    -> od razu publikuje świeże, jeszcze nieopublikowane newsy
+//   node publikuj.js            -> od razu publikuje następną ciekawostkę
 //   node publikuj.js --id 0     -> publikuje konkretny post
 //   dowolne z powyższych + --test  -> tylko pokazuje, co by opublikował
 import fs from "node:fs";
@@ -11,70 +12,79 @@ const cfg = (k) => process.env[k] || (env.match(new RegExp(`^${k}=(.+)$`, "m")) 
 const TOKEN = cfg("IG_TOKEN");
 const IG = cfg("IG_USER_ID");
 const BASE = cfg("BASE_URL");
+const FB_PAGE = cfg("FB_PAGE_ID");
+const FB_TOKEN = cfg("FB_PAGE_TOKEN");
 const args = process.argv.slice(2);
 const TEST = args.includes("--test");
 const API = "https://graph.facebook.com/v23.0";
 
-// godzina (PL) -> rodzaj posta
-const GODZINY = { 10: "news", 13: "fakt", 16: "news", 19: "fakt", 22: "fakt" };
+const GODZINY_CIEKAWOSTEK = [10, 13, 16, 19, 22];
+const MAX_NEWSOW_DZIENNIE = 6;
 const HASHTAGI_FAKT = "#ciekawostki #czywiesz #wiedza #ciekawostka #faktyciekawostki #nauka #kropkawiedzy";
 const HASHTAGI_NEWS = "#wiadomosci #news #polska #swiat #informacje #kropkawiedzy";
 
 const posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
-const STAN = "opublikowane.json";
-const opublikowane = fs.existsSync(STAN) ? JSON.parse(fs.readFileSync(STAN, "utf8")) : [];
 const nr3 = (id) => String(id).padStart(3, "0");
 const bezGwiazdek = (s) => s.replace(/\*+/g, "");
 
+// stan: każdy opublikowany post ma swój plik opublikowane/NNN.json
+const STAN = "opublikowane";
+fs.mkdirSync(STAN, { recursive: true });
+const opublikowane = fs.readdirSync(STAN).filter((f) => f.endsWith(".json"))
+  .map((f) => JSON.parse(fs.readFileSync(`${STAN}/${f}`, "utf8")));
+
 const teraz = new Date();
-const czasPL = (d, o) => d.toLocaleString("sv-SE", { timeZone: "Europe/Warsaw", ...o });
-const dzis = czasPL(teraz, { year: "numeric", month: "2-digit", day: "2-digit" });
+const czasPL = (d, o) => new Date(d).toLocaleString("sv-SE", { timeZone: "Europe/Warsaw", ...o });
+const dzienPL = (d) => czasPL(d, { year: "numeric", month: "2-digit", day: "2-digit" });
+const dzis = dzienPL(teraz);
 const godz = Number(czasPL(teraz, { hour: "2-digit", hour12: false }));
 
 const gotowy = (p) =>
   !opublikowane.some((o) => o.id === p.id) && fs.existsSync(`output/${nr3(p.id)}_1.jpg`);
 const dniTemu = (d) => (new Date(dzis) - new Date(d)) / 86400000;
+const czyNews = (p) => p.typ === "news";
+const czyFakt = (p) => !p.typ || p.typ === "fakt";
 
-const nastepnyNews = () =>
-  posts
-    .filter((p) => p.typ === "news" && gotowy(p) && p.data && dniTemu(p.data) <= 1)
-    .sort((a, b) => (b.data || "").localeCompare(a.data || ""))[0];
-const nastepnyFakt = () => posts.find((p) => (!p.typ || p.typ === "fakt") && gotowy(p));
-
-let post;
+let doPublikacji = [];
 let slot = null;
 if (args.includes("--id")) {
   const id = Number(args[args.indexOf("--id") + 1]);
-  post = posts.find((p) => p.id === id);
-  if (!post) throw new Error(`Nie ma posta o id ${id}`);
+  const p = posts.find((x) => x.id === id);
+  if (!p) throw new Error(`Nie ma posta o id ${id}`);
+  doPublikacji = [p];
+} else if (args.includes("--newsy")) {
+  const dzisNewsow = opublikowane.filter((o) => o.typ === "news" && dzienPL(o.data) === dzis).length;
+  doPublikacji = posts
+    .filter((p) => czyNews(p) && gotowy(p) && p.data && dniTemu(p.data) <= 1)
+    .slice(0, Math.max(0, MAX_NEWSOW_DZIENNIE - dzisNewsow));
 } else if (args.includes("--auto")) {
-  const rodzaj = GODZINY[godz];
-  if (!rodzaj) { console.log(`W Polsce jest ${godz}:xx – to nie jest godzina publikacji, pomijam.`); process.exit(0); }
+  if (!GODZINY_CIEKAWOSTEK.includes(godz)) {
+    console.log(`W Polsce jest ${godz}:xx – to nie jest godzina ciekawostki, pomijam.`);
+    process.exit(0);
+  }
   slot = `${dzis} ${godz}`;
-  if (opublikowane.some((o) => o.slot === slot)) { console.log(`Post na ${slot}:00 już wyszedł – pomijam.`); process.exit(0); }
-  post = rodzaj === "news" ? nastepnyNews() || nastepnyFakt() : nastepnyFakt() || nastepnyNews();
+  if (opublikowane.some((o) => o.slot === slot)) { console.log(`Ciekawostka na ${godz}:00 już wyszła – pomijam.`); process.exit(0); }
+  doPublikacji = [posts.find((p) => czyFakt(p) && gotowy(p))].filter(Boolean);
 } else {
-  post = nastepnyFakt();
+  doPublikacji = [posts.find((p) => czyFakt(p) && gotowy(p))].filter(Boolean);
 }
-if (!post) { console.log("Brak postów do opublikowania – kolejka jest pusta!"); process.exit(0); }
+if (!doPublikacji.length) { console.log("Nic do opublikowania."); process.exit(0); }
 
-const opis =
-  post.opis ||
-  (post.typ === "news"
-    ? `${bezGwiazdek(post.zajawka)} 📰\n\n👉 Przesuń, żeby poznać szczegóły.\n\n` +
+function opis(post) {
+  if (post.opis) return post.opis;
+  if (czyNews(post))
+    return `${bezGwiazdek(post.zajawka)} 📰\n\n👉 Przesuń, żeby poznać szczegóły.\n\n` +
       (post.zrodlo ? `Źródło: ${post.zrodlo}\n\n` : "") +
-      `Obserwuj @kropka.wiedzy, żeby być na bieżąco.\n\n${HASHTAGI_NEWS}`
-    : `${post.etykieta ? bezGwiazdek(post.zajawka) : `Czy wiesz, że ${bezGwiazdek(post.zajawka).replace(/^./, (c) => c.toLowerCase())}?`} 🤯\n\n` +
-      `👉 Przesuń, żeby poznać szczegóły!\n🔖 Zapisz, żeby nie zapomnieć, i wyślij komuś, kto powinien to wiedzieć.\n\n` +
-      `Codziennie nowe ciekawostki – obserwuj @kropka.wiedzy\n\n${HASHTAGI_FAKT}`);
+      `Obserwuj @kropka.wiedzy, żeby być na bieżąco.\n\n${HASHTAGI_NEWS}`;
+  const glowa = post.etykieta
+    ? bezGwiazdek(post.zajawka)
+    : `Czy wiesz, że ${bezGwiazdek(post.zajawka).replace(/^./, (c) => c.toLowerCase())}?`;
+  return `${glowa} 🤯\n\n👉 Przesuń, żeby poznać szczegóły!\n🔖 Zapisz, żeby nie zapomnieć, i wyślij komuś, kto powinien to wiedzieć.\n\n` +
+    `Codziennie nowe ciekawostki – obserwuj @kropka.wiedzy\n\n${HASHTAGI_FAKT}`;
+}
 
-const zdjecia = [1, 2].map((n) => `${(BASE || "<BASE_URL>").replace(/\/$/, "")}/${nr3(post.id)}_${n}.jpg`);
-console.log(`Post ${post.id} (${post.typ || "fakt"}): ${bezGwiazdek(post.zajawka)}\n${zdjecia.join("\n")}\n---\n${opis}\n---`);
-if (TEST) process.exit(0);
-if (!TOKEN || !IG || !BASE) throw new Error("Brak IG_TOKEN, IG_USER_ID lub BASE_URL");
-
-async function api(sciezka, params, method = "POST") {
-  const body = new URLSearchParams({ ...params, access_token: TOKEN });
+async function api(sciezka, params, method = "POST", token = TOKEN) {
+  const body = new URLSearchParams({ ...params, access_token: token });
   const res = await fetch(
     method === "GET" ? `${API}/${sciezka}?${body}` : `${API}/${sciezka}`,
     method === "GET" ? {} : { method, body }
@@ -94,20 +104,51 @@ async function czekaj(id) {
   throw new Error("Instagram zbyt długo przetwarza zdjęcia");
 }
 
-const dzieci = [];
-for (const url of zdjecia) {
-  const { id } = await api(`${IG}/media`, { image_url: url, is_carousel_item: "true" });
-  await czekaj(id);
-  dzieci.push(id);
+async function instagram(zdjecia, tekst) {
+  const dzieci = [];
+  for (const url of zdjecia) {
+    const { id } = await api(`${IG}/media`, { image_url: url, is_carousel_item: "true" });
+    await czekaj(id);
+    dzieci.push(id);
+  }
+  const { id: karuzela } = await api(`${IG}/media`, { media_type: "CAROUSEL", children: dzieci.join(","), caption: tekst });
+  await czekaj(karuzela);
+  const { id } = await api(`${IG}/media_publish`, { creation_id: karuzela });
+  return id;
 }
-const { id: karuzela } = await api(`${IG}/media`, {
-  media_type: "CAROUSEL",
-  children: dzieci.join(","),
-  caption: opis,
-});
-await czekaj(karuzela);
-const { id: media } = await api(`${IG}/media_publish`, { creation_id: karuzela });
 
-opublikowane.push({ id: post.id, media, data: teraz.toISOString(), ...(slot && { slot }) });
-fs.writeFileSync(STAN, JSON.stringify(opublikowane, null, 2));
-console.log(`✅ Opublikowano post ${post.id} (media ${media})`);
+async function facebook(zdjecia, tekst) {
+  const ids = [];
+  for (const url of zdjecia) {
+    const { id } = await api(`${FB_PAGE}/photos`, { url, published: "false" }, "POST", FB_TOKEN);
+    ids.push(id);
+  }
+  const params = { message: tekst };
+  ids.forEach((id, i) => (params[`attached_media[${i}]`] = JSON.stringify({ media_fbid: id })));
+  const { id } = await api(`${FB_PAGE}/feed`, params, "POST", FB_TOKEN);
+  return id;
+}
+
+for (const post of doPublikacji) {
+  const zdjecia = [1, 2].map((n) => `${(BASE || "<BASE_URL>").replace(/\/$/, "")}/${nr3(post.id)}_${n}.jpg`);
+  const tekst = opis(post);
+  console.log(`Post ${post.id} (${post.typ || "fakt"}): ${bezGwiazdek(post.zajawka)}\n${zdjecia.join("\n")}\n---\n${tekst}\n---`);
+  if (TEST) continue;
+  if (!TOKEN || !IG || !BASE) throw new Error("Brak IG_TOKEN, IG_USER_ID lub BASE_URL");
+
+  const media = await instagram(zdjecia, tekst);
+  console.log(`✅ Instagram: post ${post.id} (media ${media})`);
+
+  let fb = null;
+  if (FB_PAGE && FB_TOKEN) {
+    try {
+      fb = await facebook(zdjecia, tekst.replace(/@kropka\.wiedzy/g, "Kropka Wiedzy"));
+      console.log(`✅ Facebook: post ${post.id} (${fb})`);
+    } catch (e) {
+      console.log(`⚠️ Facebook nie przyjął posta ${post.id}: ${e.message}`);
+    }
+  }
+
+  const wpis = { id: post.id, typ: post.typ || "fakt", media, fb, data: new Date().toISOString(), ...(slot && { slot }) };
+  fs.writeFileSync(`${STAN}/${nr3(post.id)}.json`, JSON.stringify(wpis, null, 2));
+}

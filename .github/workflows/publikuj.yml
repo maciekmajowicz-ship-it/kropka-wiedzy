@@ -1,14 +1,14 @@
-name: Publikowanie na Instagram
+name: Publikowanie na Instagram i Facebook
 
 on:
   schedule:
-    # Posty o 10, 13, 16, 19 i 22 czasu polskiego. Cron jest w UTC, więc każda godzina
+    # Ciekawostki o 10, 13, 16, 19 i 22 czasu polskiego. Cron jest w UTC, więc każda godzina
     # jest dwa razy (zima i lato) – skrypt sam sprawdza, czy to właściwa godzina w Polsce.
     - cron: "3 8,9,11,12,14,15,17,18,20,21 * * *"
   push:
     branches: [main]
-    paths: [posts.json] # nowe posty -> od razu robimy grafiki
-  workflow_dispatch: # ręczne uruchomienie z zakładki Actions (publikuje od razu)
+    paths: [posts.json] # agent dopisał news -> robimy grafiki i publikujemy od razu
+  workflow_dispatch: # ręczne uruchomienie z zakładki Actions (publikuje od razu ciekawostkę)
 
 permissions:
   contents: write
@@ -19,6 +19,12 @@ concurrency:
 jobs:
   publikuj:
     runs-on: ubuntu-latest
+    env:
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/output
     steps:
       - uses: actions/checkout@v4
 
@@ -31,6 +37,8 @@ jobs:
         run: |
           npm ci
           sudo apt-get install -y -qq fonts-noto-color-emoji > /dev/null
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Zdjęcia i grafiki dla nowych postów
         env:
@@ -39,21 +47,19 @@ jobs:
         run: |
           node pobierz_zdjecia.js
           node render.js
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output zdjecia/*.json
           git diff --cached --quiet || (git commit -m "Nowe grafiki" && git pull --rebase && git push)
 
-      - name: Opublikuj post
-        if: github.event_name != 'push'
-        env:
-          IG_TOKEN: ${{ secrets.IG_TOKEN }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/output
-        run: node publikuj.js ${{ github.event_name == 'schedule' && '--auto' || '' }}
+      - name: Opublikuj
+        run: |
+          case "${{ github.event_name }}" in
+            push)     node publikuj.js --newsy ;;
+            schedule) node publikuj.js --auto ;;
+            *)        node publikuj.js ;;
+          esac
 
       - name: Zapisz, co zostało opublikowane
-        if: github.event_name != 'push'
+        if: always()
         run: |
-          git add opublikowane.json 2>/dev/null || true
-          git diff --cached --quiet || (git commit -m "Opublikowano post" && git pull --rebase && git push)
+          git add opublikowane
+          git diff --cached --quiet || (git commit -m "Opublikowano" && git pull --rebase && git push)

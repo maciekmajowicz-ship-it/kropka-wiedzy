@@ -1,26 +1,199 @@
 [
-    {
-        "id":  1,
-        "zdjecie":  "octopus underwater",
-        "emoji":  "🐙",
-        "zajawka":  "Ośmiornica ma *trzy serca* i *niebieską krew*",
-        "tytul":  "Kosmita z oceanu",
-        "tekst":  "Ośmiornica ma **trzy serca**. Dwa pompują krew przez skrzela, a trzecie rozprowadza ją po reszcie ciała. Co ciekawe, główne serce **przestaje bić, gdy ośmiornica płynie** – dlatego woli pełzać, bo pływanie szybko ją męczy.\n\nJej krew jest **niebieska**, bo tlen przenosi w niej miedź, a nie żelazo jak u nas. Taka krew lepiej sprawdza się w zimnej wodzie, gdzie tlenu jest mało."
-    },
-    {
-        "id":  2,
-        "zdjecie":  "honey jar",
-        "emoji":  "🍯",
-        "zajawka":  "Miód z egipskich grobowców *przetrwał 3000 lat*",
-        "tytul":  "Jedzenie, które się nie psuje",
-        "tekst":  "Archeolodzy znajdowali w egipskich grobowcach naczynia z miodem sprzed **około 3000 lat** – i miód wciąż nie był zepsuty.\n\nTo zasługa jego składu: ma **bardzo mało wody**, jest kwaśny, a pszczoły dodają do niego enzym, z którego powstaje odrobina **nadtlenku wodoru**. Bakterie i pleśnie nie mają w nim szans. Skrystalizowany miód wystarczy delikatnie podgrzać."
-    },
-    {
-        "id":  3,
-        "zdjecie":  "eiffel tower",
-        "emoji":  "🗼",
-        "zajawka":  "Wieża Eiffla latem jest *wyższa niż zimą*",
-        "tytul":  "Rosnąca wieża w Paryżu",
-        "tekst":  "Wieża Eiffla jest zbudowana z żelaza, a metal **rozszerza się pod wpływem ciepła**. W upalne dni wieża może urosnąć nawet o **około 15 centymetrów**.\n\nSłońce nagrzewa jedną jej stronę mocniej niż drugą, więc czubek **delikatnie odchyla się od słońca**. Zimą, gdy metal się kurczy, wieża wraca do swojego zwykłego wzrostu."
-    }
+  {
+    "id": 0,
+    "typ": "intro",
+    "etykieta": "Cześć! 👋",
+    "zdjecie": "night sky stars milky way",
+    "emoji": "💡",
+    "zajawka": "Codziennie dowiesz się tu czegoś, *czego jeszcze nie wiesz*",
+    "tytul": "Co znajdziesz na kropka.wiedzy?",
+    "tekst": "**Ciekawostki** – zaskakujące fakty o świecie, przyrodzie, kosmosie i ludzkim ciele.\n\n**Newsy z Polski i ze świata** – najważniejsze i najciekawsze wydarzenia dnia, krótko i konkretnie.\n\n**Historie kryminalne** – głośne sprawy, o których mówił cały świat.\n\nNowe posty **5 razy dziennie**. Każdy przeczytasz w minutę. Obserwuj i napisz w komentarzu, o czym chcesz poczytać!",
+    "opis": "Cześć! 👋 Witaj na kropka.wiedzy!\n\nCodziennie znajdziesz tu:\n💡 zaskakujące ciekawostki\n📰 najważniejsze newsy z Polski i ze świata\n🔎 historie kryminalne, o których mówił cały świat\n\nKażdy post przeczytasz w minutę. Obserwuj, żeby niczego nie przegapić, i napisz w komentarzu, o czym chcesz poczytać! 👇\n\n#ciekawostki #czywiesz #wiedza #news #kropkawiedzy"
+  },
+  {
+    "id": 1,
+    "zdjecie": "octopus underwater",
+    "emoji": "🐙",
+    "zajawka": "Ośmiornica ma *trzy serca* i *niebieską krew*",
+    "tytul": "Kosmita z oceanu",
+    "tekst": "Ośmiornica ma **trzy serca**. Dwa pompują krew przez skrzela, a trzecie rozprowadza ją po reszcie ciała. Co ciekawe, główne serce **przestaje bić, gdy ośmiornica płynie** – dlatego woli pełzać, bo pływanie szybko ją męczy.\n\nJej krew jest **niebieska**, bo tlen przenosi w niej miedź, a nie żelazo jak u nas. Taka krew lepiej sprawdza się w zimnej wodzie, gdzie tlenu jest mało."
+  },
+  {
+    "id": 2,
+    "zdjecie": "honey jar",
+    "emoji": "🍯",
+    "zajawka": "Miód z egipskich grobowców *przetrwał 3000 lat*",
+    "tytul": "Jedzenie, które się nie psuje",
+    "tekst": "Archeolodzy znajdowali w egipskich grobowcach naczynia z miodem sprzed **około 3000 lat** – i miód wciąż nie był zepsuty.\n\nTo zasługa jego składu: ma **bardzo mało wody**, jest kwaśny, a pszczoły dodają do niego enzym, z którego powstaje odrobina **nadtlenku wodoru**. Bakterie i pleśnie nie mają w nim szans. Skrystalizowany miód wystarczy delikatnie podgrzać."
+  },
+  {
+    "id": 3,
+    "zdjecie": "eiffel tower",
+    "emoji": "🗼",
+    "zajawka": "Wieża Eiffla latem jest *wyższa niż zimą*",
+    "tytul": "Rosnąca wieża w Paryżu",
+    "tekst": "Wieża Eiffla jest zbudowana z żelaza, a metal **rozszerza się pod wpływem ciepła**. W upalne dni wieża może urosnąć nawet o **około 15 centymetrów**.\n\nSłońce nagrzewa jedną jej stronę mocniej niż drugą, więc czubek **delikatnie odchyla się od słońca**. Zimą, gdy metal się kurczy, wieża wraca do swojego zwykłego wzrostu."
+  },
+  {
+    "id": 4,
+    "zdjecie": "bananas",
+    "emoji": "🍌",
+    "zajawka": "Banan to *jagoda*, a truskawka *nie*",
+    "tytul": "Botanika lubi zaskakiwać",
+    "tekst": "Dla botanika jagoda to owoc, który powstaje z **jednego zalążka kwiatu** i ma nasiona ukryte w miąższu. Banan spełnia te warunki, więc **jest jagodą** – podobnie jak pomidor, kiwi czy bakłażan.\n\nTruskawka już nie. Jej „pestki” na zewnątrz to tak naprawdę **małe owoce (orzeszki)**, a czerwony miąższ to rozrośnięte dno kwiatu. Botanicy nazywają ją **owocem pozornym**."
+  },
+  {
+    "id": 5,
+    "zdjecie": "venus planet",
+    "emoji": "🪐",
+    "zajawka": "Na Wenus *doba trwa dłużej niż rok*",
+    "tytul": "Najdziwniejszy kalendarz w Układzie Słonecznym",
+    "tekst": "Wenus obraca się wokół własnej osi bardzo powoli – jeden obrót zajmuje jej **około 243 ziemskie dni**. Za to okrążenie Słońca trwa tylko **około 225 dni**.\n\nTo znaczy, że rok na Wenus mija **szybciej niż jeden pełny obrót planety**. Do tego Wenus kręci się w **przeciwną stronę** niż Ziemia, więc Słońce wschodzi tam na zachodzie."
+  },
+  {
+    "id": 6,
+    "zdjecie": "wombat",
+    "emoji": "🦘",
+    "zajawka": "Wombaty robią *kupki w kształcie kostek*",
+    "tytul": "Sześcienna zagadka z Australii",
+    "tekst": "Wombat to australijski torbacz, który jako jedyne znane zwierzę zostawia **odchody w kształcie sześcianów**.\n\nNaukowcy odkryli, że odpowiada za to **końcowy odcinek jelita**, którego ścianki mają różną sztywność i formują kostki. Wombaty zostawiają je na kamieniach i pniach, żeby **oznaczać teren** – a kostki się nie turlają!"
+  },
+  {
+    "id": 7,
+    "zdjecie": "pyramids giza",
+    "emoji": "🏛️",
+    "zajawka": "Kleopatra żyła *bliżej naszych czasów* niż budowy piramid",
+    "tytul": "Starożytność była bardzo długa",
+    "tekst": "Wielka Piramida w Gizie powstała około **2560 roku p.n.e.** Kleopatra żyła w latach **69–30 p.n.e.**, czyli **ponad 2500 lat później**.\n\nOd Kleopatry do lądowania człowieka na Księżycu w **1969 roku** minęło mniej – około **2000 lat**. Dla samej Kleopatry piramidy były więc **starożytnym zabytkiem**, tak jak dla nas."
+  },
+  {
+    "id": 8,
+    "zdjecie": "giraffe",
+    "emoji": "🦒",
+    "zajawka": "Żyrafa ma w szyi *tyle samo kręgów co człowiek*",
+    "tytul": "Długa szyja, ta sama liczba kości",
+    "tekst": "Szyja żyrafy może mieć **prawie 2 metry** długości, a mimo to składa się z **7 kręgów** – dokładnie tak jak u człowieka.\n\nRóżnica tkwi w rozmiarze: pojedynczy kręg szyjny żyrafy może mieć **ponad 25 centymetrów**. Siedem kręgów szyjnych ma prawie każdy ssak – od myszy po wieloryba."
+  },
+  {
+    "id": 9,
+    "zdjecie": "great white shark",
+    "emoji": "🦈",
+    "zajawka": "Rekiny są *starsze niż drzewa*",
+    "tytul": "Żywe skamieliny oceanów",
+    "tekst": "Pierwsze rekiny pływały w oceanach już **około 450 milionów lat temu**. Pierwsze drzewa pojawiły się na Ziemi **około 385 milionów lat temu**.\n\nRekiny przetrwały **pięć wielkich wymierań**, w tym to, które zakończyło erę dinozaurów. Dziś znamy **ponad 500 gatunków** rekinów."
+  },
+  {
+    "id": 10,
+    "zdjecie": "oxford university",
+    "emoji": "🎓",
+    "zajawka": "Uniwersytet Oksfordzki jest *starszy niż imperium Azteków*",
+    "tytul": "Bardzo stara uczelnia",
+    "tekst": "Na Oksfordzie nauczano już **pod koniec XI wieku** – pierwsze ślady zajęć pochodzą z **1096 roku**.\n\nTenochtitlan, stolica Azteków, został założony dopiero **w 1325 roku**. Oznacza to, że studenci uczyli się na Oksfordzie **ponad 200 lat** przed powstaniem jednego z najsłynniejszych imperiów Ameryki."
+  },
+  {
+    "id": 11,
+    "zdjecie": "flamingo",
+    "emoji": "🦩",
+    "zajawka": "Flamingi są różowe *przez to, co jedzą*",
+    "tytul": "Jesteś tym, co jesz",
+    "tekst": "Pisklęta flamingów są **szare lub białe**. Różowy kolor pojawia się dopiero dzięki diecie – flamingi jedzą glony i drobne skorupiaki pełne **karotenoidów**, czyli barwników podobnych do tych w marchewce.\n\nIm więcej karotenoidów, tym **intensywniejszy róż**. Gdy flaming przestaje je dostawać, jego pióra z czasem **blakną**."
+  },
+  {
+    "id": 12,
+    "zdjecie": "bee honey flower",
+    "emoji": "🐝",
+    "zajawka": "Jedna pszczoła przez całe życie robi *mniej niż łyżeczkę miodu*",
+    "tytul": "Praca całego roju",
+    "tekst": "Robotnica pszczoły miodnej żyje latem zaledwie **kilka tygodni**. W tym czasie wytwarza około **1/12 łyżeczki miodu**.\n\nŻeby powstał **jeden słoik miodu**, pszczoły z ula muszą odwiedzić **miliony kwiatów** i przelecieć łącznie dystans porównywalny z **kilkukrotnym okrążeniem Ziemi**. Warto o tym pamiętać przy śniadaniu!"
+  },
+  {
+    "id": 13,
+    "zdjecie": "sun space",
+    "emoji": "☀️",
+    "zajawka": "Słońce, które widzisz, to obraz *sprzed ponad 8 minut*",
+    "tytul": "Spóźnione światło",
+    "tekst": "Światło porusza się z prędkością **około 300 000 km na sekundę**, ale Słońce jest od nas oddalone o **około 150 milionów kilometrów**.\n\nDlatego jego światło leci do Ziemi **około 8 minut i 20 sekund**. Gdyby Słońce nagle zgasło, **przez ponad 8 minut** nie mielibyśmy o tym pojęcia."
+  },
+  {
+    "id": 14,
+    "zdjecie": "salt mine",
+    "emoji": "🧂",
+    "zajawka": "W Wieliczce jest *kaplica w całości wykuta w soli*",
+    "tytul": "Podziemna katedra",
+    "tekst": "Kaplica św. Kingi w Kopalni Soli „Wieliczka” znajduje się **ponad 100 metrów pod ziemią**. Ściany, ołtarz, rzeźby, a nawet **żyrandole** zrobiono z soli kamiennej.\n\nGórnicy tworzyli ją przez **około 70 lat**. W 1978 roku kopalnia trafiła na **pierwszą listę światowego dziedzictwa UNESCO** – jako jedno z 12 pierwszych miejsc na świecie."
+  },
+  {
+    "id": 15,
+    "zdjecie": "old laboratory",
+    "emoji": "⚗️",
+    "zajawka": "Notatki Marii Skłodowskiej-Curie *wciąż są radioaktywne*",
+    "tytul": "Niebezpieczne zeszyty",
+    "tekst": "Maria Skłodowska-Curie badała pierwiastki promieniotwórcze, nie wiedząc, jak bardzo są groźne. Jej **notatki i książki** do dziś są skażone radem, który pozostanie aktywny **przez tysiące lat**.\n\nPrzechowuje się je w **ołowianych pudłach** we francuskiej Bibliotece Narodowej. Kto chce je obejrzeć, musi założyć **odzież ochronną** i podpisać zgodę na ryzyko."
+  },
+  {
+    "id": 16,
+    "zdjecie": "puzzle cube colorful",
+    "emoji": "🧩",
+    "zajawka": "Kostka Rubika ma *43 tryliony* możliwych ułożeń",
+    "tytul": "Mała kostka, ogromne liczby",
+    "tekst": "Klasyczną kostkę Rubika można ułożyć na **43 252 003 274 489 856 000** sposobów – to ponad **43 tryliony**.\n\nMimo to matematycy udowodnili, że każde ułożenie da się rozwiązać w **maksymalnie 20 ruchach**. Ta liczba nazywana jest **„liczbą Boga”**."
+  },
+  {
+    "id": 17,
+    "zdjecie": "humpback whale ocean",
+    "emoji": "🐋",
+    "zajawka": "Serce płetwala błękitnego waży *około 180 kg*",
+    "tytul": "Największe serce na świecie",
+    "tekst": "Płetwal błękitny to **największe zwierzę, jakie kiedykolwiek żyło na Ziemi** – większe od każdego dinozaura. Może mieć **ponad 30 metrów** długości.\n\nJego serce zbadane przez naukowców ważyło **około 180 kilogramów**. Podczas nurkowania bije bardzo wolno – nawet **2 razy na minutę** – żeby oszczędzać tlen."
+  },
+  {
+    "id": 18,
+    "zdjecie": "mountain andes",
+    "emoji": "🏔️",
+    "zajawka": "Najdalej od środka Ziemi *nie jest Mount Everest*",
+    "tytul": "Ziemia nie jest idealną kulą",
+    "tekst": "Ziemia jest lekko **spłaszczona na biegunach** i „wybrzuszona” na równiku. Dlatego najdalej od środka planety znajduje się szczyt **Chimborazo w Ekwadorze**, leżący blisko równika.\n\nEverest jest najwyższy **nad poziomem morza**, ale wierzchołek Chimborazo jest od środka Ziemi oddalony **o ponad 2 km dalej**."
+  },
+  {
+    "id": 19,
+    "zdjecie": "moon",
+    "emoji": "🌕",
+    "zajawka": "Australia jest *szersza niż Księżyc*",
+    "tytul": "Kontynent kontra Księżyc",
+    "tekst": "Średnica Księżyca wynosi **około 3474 km**. Australia ze wschodu na zachód ma **prawie 4000 km** szerokości.\n\nOczywiście Księżyc jest kulą, więc jego powierzchnia jest **kilka razy większa** od Australii. Ale gdyby położyć je obok siebie na mapie, **Australia byłaby szersza**."
+  },
+  {
+    "id": 20,
+    "zdjecie": "goldfish",
+    "emoji": "🐠",
+    "zajawka": "Złota rybka *nie ma* 3-sekundowej pamięci",
+    "tytul": "Mit, który trzeba obalić",
+    "tekst": "Popularne powiedzenie mówi, że złota rybka pamięta tylko **3 sekundy**. To nieprawda.\n\nBadania pokazały, że złote rybki potrafią zapamiętywać informacje **przez miesiące**. Można je nauczyć reagowania na **dźwięk, kolor czy porę karmienia**, a nawet przepływania przez proste labirynty."
+  },
+  {
+    "id": 21,
+    "zdjecie": "napoleon",
+    "emoji": "🎖️",
+    "zajawka": "Napoleon wcale *nie był niski*",
+    "tytul": "Najsłynniejszy mit o wzroście",
+    "tekst": "Napoleon miał około **168–170 cm wzrostu** – tyle, ile przeciętny Francuz w jego czasach.\n\nMit wziął się m.in. z **różnicy w jednostkach**: francuski cal był dłuższy od angielskiego, więc jego wzrost źle przeliczano. Dołożyła się też **brytyjska propaganda**, która przedstawiała go jako małego, złośliwego człowieczka."
+  },
+  {
+    "id": 22,
+    "etykieta": "Historia kryminalna",
+    "zdjecie": "museum painting gallery",
+    "emoji": "🖼️",
+    "zajawka": "Mona Lisa stała się sławna *dzięki kradzieży*",
+    "tytul": "Kradzież stulecia w Luwrze",
+    "tekst": "**21 sierpnia 1911 roku** Mona Lisa zniknęła z Luwru. Ukradł ją **Vincenzo Peruggia**, włoski pracownik muzeum, który schował się w budynku i wyniósł obraz pod ubraniem.\n\nPrzez **ponad 2 lata** nikt nie wiedział, gdzie jest. Peruggia wpadł w **1913 roku**, gdy próbował sprzedać obraz we Florencji. Gazety na całym świecie pisały o kradzieży, a Mona Lisa stała się **najsłynniejszym obrazem świata**."
+  },
+  {
+    "id": 23,
+    "etykieta": "Historia kryminalna",
+    "zdjecie": "airplane night sky",
+    "emoji": "🪂",
+    "zajawka": "Porywacz samolotu *wyskoczył ze spadochronem* i nigdy go nie znaleziono",
+    "tytul": "Zagadka D.B. Coopera",
+    "tekst": "W **listopadzie 1971 roku** mężczyzna przedstawiający się jako Dan Cooper porwał samolot w USA. Zażądał **200 000 dolarów** i czterech spadochronów.\n\nPo otrzymaniu pieniędzy **wyskoczył z samolotu** nocą, w czasie lotu. Mimo ogromnego śledztwa FBI **nigdy nie ustaliło, kim był**. W 2016 roku biuro zakończyło aktywne śledztwo – to jedyne **nierozwiązane porwanie samolotu** w historii USA."
+  }
 ]

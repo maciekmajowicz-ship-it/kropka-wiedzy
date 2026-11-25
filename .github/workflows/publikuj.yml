@@ -1,10 +1,14 @@
-name: Codzienny post na Instagram
+name: Publikowanie na Instagram
 
 on:
   schedule:
-    # 16:00 i 17:00 UTC = 18:00 w Polsce (latem i zimą); skrypt sam wybiera właściwą godzinę
-    - cron: "0 16,17 * * *"
-  workflow_dispatch: # ręczne uruchomienie z zakładki Actions
+    # Posty o 10, 13, 16, 19 i 22 czasu polskiego. Cron jest w UTC, więc każda godzina
+    # jest dwa razy (zima i lato) – skrypt sam sprawdza, czy to właściwa godzina w Polsce.
+    - cron: "3 8,9,11,12,14,15,17,18,20,21 * * *"
+  push:
+    branches: [main]
+    paths: [posts.json] # nowe posty -> od razu robimy grafiki
+  workflow_dispatch: # ręczne uruchomienie z zakładki Actions (publikuje od razu)
 
 permissions:
   contents: write
@@ -21,18 +25,35 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+
+      - name: Instalacja
+        run: |
+          npm ci
+          sudo apt-get install -y -qq fonts-noto-color-emoji > /dev/null
+
+      - name: Zdjęcia i grafiki dla nowych postów
+        env:
+          PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
+          CHROME_PATH: /usr/bin/google-chrome
+        run: |
+          node pobierz_zdjecia.js
+          node render.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output zdjecia/*.json
+          git diff --cached --quiet || (git commit -m "Nowe grafiki" && git pull --rebase && git push)
 
       - name: Opublikuj post
+        if: github.event_name != 'push'
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/output
-        # ręczne uruchomienie publikuje od razu, harmonogram tylko o 18:00
         run: node publikuj.js ${{ github.event_name == 'schedule' && '--auto' || '' }}
 
       - name: Zapisz, co zostało opublikowane
+        if: github.event_name != 'push'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add opublikowane.json 2>/dev/null || true
-          git diff --cached --quiet || (git commit -m "Opublikowano post" && git push)
+          git diff --cached --quiet || (git commit -m "Opublikowano post" && git pull --rebase && git push)

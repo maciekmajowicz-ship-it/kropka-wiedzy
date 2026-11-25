@@ -24,6 +24,13 @@ export const PALETY = [
   { akcent: "#B9A2FF", a: "#3D5AFE", b: "#E040FB" },
 ];
 
+const MIES = ["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
+const dataPL = (d) => {
+  if (!d) return "";
+  const [r, m, dz] = d.split("-").map(Number);
+  return `${dz} ${MIES[m - 1]} ${r}`;
+};
+
 const esc = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -73,7 +80,7 @@ export function slajd1(post, pal, foto) {
   <div class="grain"></div>
   <div class="top"><div class="logo"><i></i>${KONTO}</div></div>
   <div class="bottom">
-    <div class="label">Czy wiesz, że…</div>
+    <div class="label">${post.etykieta ? esc(post.etykieta) : post.typ === "news" ? `${esc(post.region || "Z kraju")}<span class="dt">${esc(dataPL(post.data))}</span>` : "Czy wiesz, że…"}</div>
     <h1 id="fit">${fmt(post.zajawka)}</h1>
     <div class="foot">
       <div class="bars"><span class="on"></span><span></span></div>
@@ -97,6 +104,7 @@ h1{font-family:'Inter Tight';font-weight:900;font-size:96px;line-height:1.02;let
 .bars{display:flex;gap:10px}.bars span{width:64px;height:7px;border-radius:4px;background:rgba(255,255,255,.25)}.bars .on{background:#fff}
 .swipe{font-weight:600;font-size:28px;color:rgba(255,255,255,.85)}.swipe span{color:var(--ak);font-size:34px;margin-left:8px}
 .top .logo{text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.label .dt{margin-left:18px;padding-left:18px;border-left:3px solid rgba(11,11,16,.35);letter-spacing:.08em}
 </style>`
   );
 }
@@ -117,6 +125,7 @@ export function slajd2(post, pal, foto) {
     <h2>${esc(post.tytul)}</h2>
     <div class="line"></div>
     <div class="txt" id="fit">${fmt(post.tekst)}</div>
+    ${post.zrodlo ? `<div class="src">Źródło: ${esc(post.zrodlo)}</div>` : ""}
   </div>
   <div class="foot">
     <div class="bars"><span></span><span class="on"></span></div>
@@ -129,8 +138,9 @@ export function slajd2(post, pal, foto) {
 .content{position:absolute;top:200px;left:72px;right:72px;bottom:190px;display:flex;flex-direction:column;z-index:5}
 h2{font-family:'Inter Tight';font-weight:800;font-size:72px;line-height:1.02;letter-spacing:-.03em}
 .line{width:90px;height:8px;border-radius:4px;background:var(--ak);margin:36px 0 40px;box-shadow:0 0 20px var(--ak)}
-.txt{font-size:46px;line-height:1.48;color:rgba(255,255,255,.8);font-weight:400;flex:1}
+.txt{font-size:46px;line-height:1.48;color:rgba(255,255,255,.8);font-weight:400;flex:1;min-height:0;overflow:hidden}
 .txt p+p{margin-top:28px}
+.src{margin-top:24px;font-size:24px;font-weight:500;color:rgba(255,255,255,.5)}
 .txt b{color:#fff;font-weight:700;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--ak) 40%,transparent) 62%)}
 .foot{position:absolute;left:72px;right:72px;bottom:72px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .bars{display:flex;gap:10px}.bars span{width:64px;height:7px;border-radius:4px;background:rgba(255,255,255,.25)}.bars .on{background:#fff}

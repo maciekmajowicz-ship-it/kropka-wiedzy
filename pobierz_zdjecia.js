@@ -28,7 +28,7 @@ for (const p of posts) {
   if (tylko && p.id !== tylko) continue;
   const nr = String(p.id).padStart(3, "0");
   const plik = `zdjecia/${nr}.jpg`;
-  if (!tylko && fs.existsSync(plik)) continue;
+  if (!tylko && (fs.existsSync(plik) || fs.existsSync(`output/${nr}_1.jpg`))) continue;
   if (!p.zdjecie) { console.log(`post ${p.id}: brak pola "zdjecie"`); continue; }
 
   try {

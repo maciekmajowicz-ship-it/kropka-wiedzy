@@ -255,5 +255,17 @@
     "tytul": "Krater po teście obrony Ziemi",
     "tekst": "Europejska Agencja Kosmiczna pokazała pierwsze zbliżenia planetoidy Dimorphos wykonane przez sondę **Hera**. Widać na nich **krater wielkości stadionu**, który zajmuje niemal całą jedną stronę tej skały o średnicy ok. 150 metrów. To ślad po celowym uderzeniu sondy NASA DART w 2022 roku – **pierwszym teście obrony Ziemi** przed planetoidami.\n\nWedług naukowców ESA zderzenie nie tylko zmieniło orbitę Dimorphosa, ale wprawiło go w **chaotyczne obroty**, a wokół układu krążą setki wyrzuconych głazów. Hera będzie dalej badać ją z bliska.",
     "zrodlo": "RMF FM, BBC"
+  },
+  {
+    "id": 29,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-26",
+    "zdjecie": "courtroom gavel",
+    "emoji": "⚖️",
+    "zajawka": "Były agent CBA trafił do *aresztu* w aferze *Zondacrypto*",
+    "tytul": "Areszt dla byłego agenta CBA",
+    "tekst": "Warszawski sąd aresztował na **trzy miesiące** Artura Ch., byłego funkcjonariusza CBA, podejrzanego w śledztwie dotyczącym giełdy kryptowalut Zondacrypto. Według prokuratury miał przyjąć **blisko 650 tys. zł** w zamian za pośrednictwo w sprawach giełdy, powołując się na wpływy w Sejmie i Kancelarii Prezydenta.\n\nMężczyzna usłyszał **dwa zarzuty**: płatnej protekcji i działalności detektywistycznej bez licencji. Nie przyznał się do winy, a obrona zapowiada zażalenie. Śledztwo trwa od kwietnia, a do prokuratury wpłynęło **kilka tysięcy** zawiadomień.",
+    "zrodlo": "Polsat News, RMF FM, TVN24"
   }
 ]

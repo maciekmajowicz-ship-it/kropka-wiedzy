@@ -1,6 +1,6 @@
 // Publikuje posty (karuzela 2 zdjęć) na Instagramie i – jeśli skonfigurowano – na Facebooku.
 // Wymaga: IG_TOKEN, IG_USER_ID, BASE_URL (publiczny adres folderu output/); opcjonalnie FB_PAGE_ID + FB_PAGE_TOKEN
-//   node publikuj.js --auto     -> harmonogram: ciekawostka o 10, 13, 16, 19 i 22 (czas PL)
+//   node publikuj.js --auto     -> harmonogram: ciekawostka o 6, 9, 12, 15, 18, 21 i 23 (czas PL)
 //   node publikuj.js --newsy    -> od razu publikuje świeże, jeszcze nieopublikowane newsy
 //   node publikuj.js            -> od razu publikuje następną ciekawostkę
 //   node publikuj.js --id 0     -> publikuje konkretny post
@@ -18,7 +18,7 @@ const args = process.argv.slice(2);
 const TEST = args.includes("--test");
 const API = "https://graph.facebook.com/v23.0";
 
-const GODZINY_CIEKAWOSTEK = [10, 13, 16, 19, 22];
+const GODZINY_CIEKAWOSTEK = [6, 9, 12, 15, 18, 21, 23];
 const MAX_NEWSOW_DZIENNIE = 6;
 const HASHTAGI_FAKT = "#ciekawostki #czywiesz #wiedza #ciekawostka #faktyciekawostki #nauka #kropkawiedzy";
 const HASHTAGI_NEWS = "#wiadomosci #news #polska #swiat #informacje #kropkawiedzy";

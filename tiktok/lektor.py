@@ -5,7 +5,7 @@ import edge_tts
 
 async def main(wej, mp3, js, glos):
     tekst = open(wej, encoding="utf-8").read()
-    com = edge_tts.Communicate(tekst, glos, rate="+12%", boundary="WordBoundary")
+    com = edge_tts.Communicate(tekst, glos, rate="+0%", boundary="WordBoundary")
     slowa = []
     with open(mp3, "wb") as f:
         async for c in com.stream():

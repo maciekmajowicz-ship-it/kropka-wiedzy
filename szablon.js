@@ -24,6 +24,12 @@ export const PALETY = [
   { akcent: "#B9A2FF", a: "#3D5AFE", b: "#E040FB" },
 ];
 
+// newsy w czerwieni
+export const PALETY_NEWS = [
+  { akcent: "#FF4D4D", a: "#D90429", b: "#FF6B35" },
+  { akcent: "#FF6B6B", a: "#B80C2F", b: "#FF3D3D" },
+];
+
 const MIES = ["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
 const dataPL = (d) => {
   if (!d) return "";

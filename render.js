@@ -5,7 +5,7 @@
 // Zdjęcie do posta: zdjecia/001.jpg (dla id 1) – pobiera je pobierz_zdjecia.js
 import fs from "node:fs";
 import puppeteer from "puppeteer-core";
-import { slajd1, slajd2, PALETY } from "./szablon.js";
+import { slajd1, slajd2, PALETY, PALETY_NEWS } from "./szablon.js";
 
 const PRZEGLADARKI = [
   process.env.CHROME_PATH,
@@ -59,7 +59,8 @@ const page = await browser.newPage();
 await page.setViewport({ width: 1080, height: 1350, deviceScaleFactor: 1 });
 
 for (const p of doZrobienia) {
-  const pal = PALETY[(((p.id - 1) % PALETY.length) + PALETY.length) % PALETY.length];
+  const lista = p.typ === "news" ? PALETY_NEWS : PALETY;
+  const pal = lista[(((p.id - 1) % lista.length) + lista.length) % lista.length];
   const foto = zdjecie(p.id);
   if (!foto && wszystkie && fs.existsSync(`output/${nr3(p.id)}_1.jpg`)) {
     console.log(`post ${p.id}: brak zdjęcia lokalnie – zostawiam stare grafiki`);

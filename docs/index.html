@@ -1,0 +1,14 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>kropka.wiedzy</title>
+<style>body{font-family:system-ui,sans-serif;background:#0B0B10;color:#eee;max-width:640px;margin:0 auto;padding:40px 16px;line-height:1.6}
+a{color:#C6FF3D}h1 span{color:#FF4D4D}.kod{background:#1c1c25;border:2px solid #C6FF3D;border-radius:12px;padding:20px;margin:24px 0;word-break:break-all}
+button{font-size:20px;padding:14px 26px;border:0;border-radius:10px;background:#C6FF3D;font-weight:700;cursor:pointer}</style></head><body>
+<h1>kropka<span>.</span>wiedzy</h1>
+<div id="k"></div>
+<p>kropka.wiedzy to projekt publikujący krótkie ciekawostki i wiadomości na Instagramie i TikToku. Treści i filmy są tworzone automatycznie na podstawie publicznych źródeł, a następnie publikowane wyłącznie na koncie @kropka.wiedzy.</p>
+<p><a href="regulamin.html">Regulamin</a> · <a href="prywatnosc.html">Polityka prywatności</a></p>
+<script>
+const q=new URLSearchParams(location.search),c=q.get("code"),e=q.get("error");
+if(c)document.getElementById("k").innerHTML='<div class="kod"><b>Połączono z TikTokiem!</b><br>Skopiuj ten kod i wklej go Claude\u2019owi:<p id="c"></p><button onclick="navigator.clipboard.writeText(document.getElementById(\'c\').textContent);this.textContent=\'Skopiowano ✓\'">Kopiuj kod</button></div>',document.getElementById("c").textContent=c;
+else if(e)document.getElementById("k").innerHTML='<div class="kod">Błąd: '+e.replace(/</g,"")+'</div>';
+</script></body></html>

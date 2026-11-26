@@ -209,18 +209,6 @@
     "zrodlo": "RMF FM, TVN24"
   },
   {
-    "id": 25,
-    "typ": "news",
-    "region": "ZE ŚWIATA",
-    "data": "2026-11-26",
-    "zdjecie": "drone flying sky",
-    "emoji": "⚡",
-    "zajawka": "Ukraina zestrzeliła drona *laserem bojowym* – *po raz pierwszy*",
-    "tytul": "Laser kontra dron Gierań",
-    "tekst": "Rosyjski dron odrzutowy **Gierań** został po raz pierwszy zestrzelony nad Ukrainą za pomocą **lasera bojowego**. Informację przekazał doradca prezydenta Ukrainy ds. technologii obronnych Serhij Beskrestnow. Według niego system **Blysk** ukraińskiej firmy Carmine Sky chronił obiekt infrastruktury krytycznej.\n\nDoradca podkreślił, że to **pierwszy potwierdzony taki przypadek**, ale na produkcję seryjną jest jeszcze za wcześnie – lasery są drogie, a system nadal przechodzi testy.",
-    "zrodlo": "RMF FM, TVN24"
-  },
-  {
     "id": 26,
     "typ": "news",
     "region": "Z POLSKI",

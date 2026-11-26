@@ -21,7 +21,7 @@ const API = "https://graph.facebook.com/v23.0";
 const GODZINY_STALE = [7, 16, 21];
 // wyjątki na pojedyncze dni (data PL -> godziny)
 const GODZINY_WYJATKI = {};
-const MAX_NEWSOW_DZIENNIE = 20;
+const MAX_NEWSOW_DZIENNIE = 30;
 const HASHTAGI_FAKT = "#ciekawostki #czywiesz #wiedza #ciekawostka #faktyciekawostki #nauka #kropkawiedzy";
 const HASHTAGI_NEWS = "#wiadomosci #news #polska #swiat #informacje #kropkawiedzy";
 

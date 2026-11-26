@@ -243,5 +243,17 @@
     "tytul": "Skarby z cmentarzyska pod Baranowem",
     "tekst": "Archeolodzy zakończyli trzyletnie badania **starożytnego cmentarzyska sprzed około 2000 lat** w gminie Baranów na Mazowszu. Na ponad 100 arach znaleźli **kilka tysięcy zabytków**: popielnice, ozdoby, groty włóczni, części tarcz oraz miecze, które celowo wygięto lub złamano przed złożeniem do grobu.\n\nNajcenniejszym znaleziskiem jest bogato zdobiona **lunula – wisior w kształcie półksiężyca**, który mógł mieć związek z kultem księżyca. Cmentarzysko należało do ludności kultury przeworskiej. Badania prowadzono przed budową Portu Polska, a teraz archeolodzy zajmują się pobliską osadą.",
     "zrodlo": "RMF FM, Rynek Lotniczy"
+  },
+  {
+    "id": 28,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-26",
+    "zdjecie": "asteroid space crater",
+    "emoji": "☄️",
+    "zajawka": "Sonda Hera pokazała *krater wielkości stadionu* po kosmicznej kolizji",
+    "tytul": "Krater po teście obrony Ziemi",
+    "tekst": "Europejska Agencja Kosmiczna pokazała pierwsze zbliżenia planetoidy Dimorphos wykonane przez sondę **Hera**. Widać na nich **krater wielkości stadionu**, który zajmuje niemal całą jedną stronę tej skały o średnicy ok. 150 metrów. To ślad po celowym uderzeniu sondy NASA DART w 2022 roku – **pierwszym teście obrony Ziemi** przed planetoidami.\n\nWedług naukowców ESA zderzenie nie tylko zmieniło orbitę Dimorphosa, ale wprawiło go w **chaotyczne obroty**, a wokół układu krążą setki wyrzuconych głazów. Hera będzie dalej badać ją z bliska.",
+    "zrodlo": "RMF FM, BBC"
   }
 ]

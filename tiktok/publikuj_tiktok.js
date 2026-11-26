@@ -17,7 +17,7 @@ const posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
 fs.mkdirSync("tiktok/wyslane", { recursive: true });
 
 const dzis = new Date().toISOString().slice(0, 10);
-const wyslaneDzis = fs.readdirSync("tiktok/wyslane")
+const wyslaneDzis = fs.readdirSync("tiktok/wyslane").filter((f) => f.endsWith(".json"))
   .map((f) => JSON.parse(fs.readFileSync(`tiktok/wyslane/${f}`, "utf8")))
   .filter((w) => w.data?.startsWith(dzis)).length;
 

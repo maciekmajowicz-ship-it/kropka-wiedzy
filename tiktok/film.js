@@ -39,10 +39,11 @@ const ostatnie = [0, 1].map((d) => new Date(dzis - d * 864e5).toISOString().slic
 fs.mkdirSync("tiktok/filmy", { recursive: true });
 const TMP = "tiktok/tmp";
 
+const naStronie = fs.existsSync("docs/filmy.json") ? JSON.parse(fs.readFileSync("docs/filmy.json", "utf8")).map((x) => x.id) : [];
 const doZrobienia = posts.filter((p) => {
   if (arg !== null) return p.id === arg;
   return p.typ === "news" && ostatnie.includes(p.data) &&
-    !fs.existsSync(`tiktok/filmy/${nr3(p.id)}.mp4`) && !fs.existsSync(`tiktok/wyslane/${nr3(p.id)}.json`) &&
+    !fs.existsSync(`tiktok/filmy/${nr3(p.id)}.mp4`) && !fs.existsSync(`tiktok/wyslane/${nr3(p.id)}.json`) && !naStronie.includes(p.id) &&
     fs.existsSync(`zdjecia/${nr3(p.id)}.jpg`);
 });
 if (!doZrobienia.length) { console.log("Brak nowych newsów do filmów."); process.exit(0); }

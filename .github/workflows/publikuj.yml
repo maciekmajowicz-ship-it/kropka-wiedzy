@@ -72,13 +72,15 @@ jobs:
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
           TIKTOK_TRYB: ${{ vars.TIKTOK_TRYB }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           pip install -q edge-tts
           node tiktok/film.js
+          node tiktok/do_pobrania.js
           node tiktok/publikuj_tiktok.js
 
       - name: Zapisz, co zostało opublikowane
         if: always()
         run: |
-          git add opublikowane tiktok/wyslane
+          git add opublikowane tiktok/wyslane docs/filmy.json
           git diff --cached --quiet || (git commit -m "Opublikowano" && git pull --rebase && git push)

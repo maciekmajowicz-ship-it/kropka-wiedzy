@@ -7,7 +7,8 @@ import fs from "node:fs";
 const env = fs.existsSync(".env") ? fs.readFileSync(".env", "utf8") : "";
 const cfg = (k) => process.env[k] || (env.match(new RegExp(`^${k}=(.+)$`, "m")) || [])[1]?.trim();
 const KEY = cfg("TIKTOK_CLIENT_KEY"), SECRET = cfg("TIKTOK_CLIENT_SECRET"), REFRESH = cfg("TIKTOK_REFRESH_TOKEN");
-const TRYB = cfg("TIKTOK_TRYB") || "szkic";
+const TRYB = cfg("TIKTOK_TRYB");
+if (!TRYB) { console.log("Automatyczna wysyłka na TikToka wyłączona (TIKTOK_TRYB) – filmy są na stronie filmy.html."); process.exit(0); }
 const MAX_DZIENNIE = 6;
 
 if (!KEY || !SECRET || !REFRESH) { console.log("TikTok nie jest jeszcze podłączony – pomijam."); process.exit(0); }

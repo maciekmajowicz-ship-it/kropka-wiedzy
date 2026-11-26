@@ -364,5 +364,17 @@
     "tytul": "Milion satelitów nad Ziemią",
     "tekst": "Amerykańska Federalna Komisja Łączności (FCC) zgodziła się, by SpaceX umieściła na orbicie **około miliona satelitów**. Według przewodniczącego komisji Brendana Carra to **pierwsza taka decyzja w historii**. Urządzenia zasilane energią słoneczną mają tworzyć **kosmiczne centra danych** dla sztucznej inteligencji.\n\nSpaceX przekonuje, że na orbicie łatwiej o energię niż na Ziemi, gdzie budowa serwerowni budzi protesty z powodu hałasu oraz zużycia prądu i wody. Według firmy pierwsze satelity obliczeniowe mają polecieć **w 2028 roku**.",
     "zrodlo": "RMF FM, Wirtualna Polska, BBC"
+  },
+  {
+    "id": 40,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-26",
+    "zdjecie": "oil tanker ship sea",
+    "emoji": "🚢",
+    "zajawka": "Koło Ibizy wywrócił się *tankowiec* z *7 tys. ton paliwa*",
+    "tytul": "Katastrofa tankowca koło Ibizy",
+    "tekst": "W nocy z 25 na 26 listopada na Morzu Śródziemnym, około **55 km na północ od Ibizy**, wywrócił się tankowiec Med Emre pływający pod banderą Malty. Statek płynął z Algeciras do Barcelony z ładunkiem około **7 tys. ton oleju napędowego**. Ratownicy wyciągnęli z wody **wszystkie 17 osób** z załogi, ale jeden marynarz zmarł w szpitalu.\n\nHiszpania uruchomiła plan reagowania na zanieczyszczenie morza. Według służb ratownictwa morskiego na razie **nie widać plamy paliwa**, ale ocena zagrożenia trwa. W okolicy żyją m.in. delfiny i żółwie morskie.",
+    "zrodlo": "RMF FM, WP, BBC"
   }
 ]

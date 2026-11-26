@@ -352,5 +352,17 @@
     "tytul": "Depardieu przed sądem",
     "tekst": "Sąd apelacyjny w Paryżu **odrzucił odwołanie Gérarda Depardieu**. 77-letni aktor odpowie przed sądem za **gwałt, do którego miało dojść 7 sierpnia 2018 roku** – oskarżyła go o to młoda aktorka. Drugi zarzut, dotyczący 13 sierpnia, sąd oddalił. Według agencji Reuters grozi mu **od 15 do 20 lat więzienia**.\n\nTo nie jedyna sprawa aktora. W połowie listopada wycofał apelację w innym procesie, przez co uprawomocnił się wyrok **18 miesięcy więzienia w zawieszeniu** za napaść seksualną na dwie kobiety. Obrona może jeszcze złożyć kasację.",
     "zrodlo": "BBC, TVN24"
+  },
+  {
+    "id": 39,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-26",
+    "zdjecie": "satellite earth orbit",
+    "emoji": "🛰️",
+    "zajawka": "USA zgodziły się na *milion satelitów* SpaceX – mają liczyć dla AI",
+    "tytul": "Milion satelitów nad Ziemią",
+    "tekst": "Amerykańska Federalna Komisja Łączności (FCC) zgodziła się, by SpaceX umieściła na orbicie **około miliona satelitów**. Według przewodniczącego komisji Brendana Carra to **pierwsza taka decyzja w historii**. Urządzenia zasilane energią słoneczną mają tworzyć **kosmiczne centra danych** dla sztucznej inteligencji.\n\nSpaceX przekonuje, że na orbicie łatwiej o energię niż na Ziemi, gdzie budowa serwerowni budzi protesty z powodu hałasu oraz zużycia prądu i wody. Według firmy pierwsze satelity obliczeniowe mają polecieć **w 2028 roku**.",
+    "zrodlo": "RMF FM, Wirtualna Polska, BBC"
   }
 ]

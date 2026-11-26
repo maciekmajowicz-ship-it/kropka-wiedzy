@@ -11,7 +11,7 @@ if (!KEY) {
   process.exit(1);
 }
 
-const posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
+const posts = JSON.parse(fs.readFileSync(process.env.POSTY || "posts.json", "utf8"));
 const tylko = process.argv[2] ? Number(process.argv[2]) : null;
 const ktory = process.argv[3] ? Number(process.argv[3]) - 1 : 0;
 fs.mkdirSync("zdjecia", { recursive: true });

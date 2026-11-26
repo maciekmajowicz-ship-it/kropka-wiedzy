@@ -5,15 +5,17 @@ import { execFileSync } from "node:child_process";
 
 const REPO = "maciekmajowicz-ship-it/kropka-wiedzy";
 const LISTA = "docs/filmy.json";
-const posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
+const posts = [...JSON.parse(fs.readFileSync("posts.json", "utf8")), ...JSON.parse(fs.readFileSync("tiktok/viral.json", "utf8"))];
 const lista = fs.existsSync(LISTA) ? JSON.parse(fs.readFileSync(LISTA, "utf8")) : [];
 const gh = (...a) => execFileSync("gh", a, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
 
 const czysty = (s = "") => s.replace(/\*+/g, "").replace(/\s+/g, " ").trim();
-const opis = (p) => `${czysty(p.zajawka || p.tytul)} ${p.emoji || ""}\n\nŹródło: ${p.zrodlo || "-"}\n\n#news #wiadomosci #${p.region === "Z POLSKI" ? "polska" : "swiat"} #kropkawiedzy #fyp`;
+const opis = (p) => p.typ === "news"
+  ? `${czysty(p.zajawka || p.tytul)} ${p.emoji || ""}\n\nŹródło: ${p.zrodlo || "-"}\n\n#news #wiadomosci #${p.region === "Z POLSKI" ? "polska" : "swiat"} #kropkawiedzy #fyp`
+  : `${p.hak ? czysty(p.hak) : `${p.etykieta ? czysty(p.tytul) + " – " : "Czy wiesz, że… "}${czysty(p.zajawka || "")}`} ${p.emoji || ""}\n\nObserwuj po więcej ciekawostek!\n\n#ciekawostki #czywiesz #wiedza #ciekawostka #kropkawiedzy #fyp`;
 
 const filmy = fs.existsSync("tiktok/filmy") ? fs.readdirSync("tiktok/filmy").filter((f) => f.endsWith(".mp4")) : [];
-const nowe = filmy.filter((f) => !lista.some((x) => x.plik === f));
+const nowe = filmy.filter((f) => !lista.some((x) => x.plik === f) && f.startsWith(process.argv[2] || ""));
 if (!nowe.length) { console.log("Brak nowych filmów do strony."); process.exit(0); }
 
 try { gh("release", "view", "filmy", "-R", REPO); }

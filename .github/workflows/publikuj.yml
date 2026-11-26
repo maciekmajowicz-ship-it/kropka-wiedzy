@@ -59,12 +59,10 @@ jobs:
           esac
 
       - uses: actions/setup-python@v5
-        if: github.event_name == 'push'
         with:
           python-version: "3.12"
 
-      - name: Filmy na TikToka (newsy)
-        if: github.event_name == 'push'
+      - name: Filmy na TikToka (newsy, a w harmonogramie 1 ciekawostka)
         continue-on-error: true # błąd TikToka nie blokuje Instagrama
         env:
           CHROME_PATH: /usr/bin/google-chrome
@@ -73,9 +71,11 @@ jobs:
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
           TIKTOK_TRYB: ${{ vars.TIKTOK_TRYB }}
           GH_TOKEN: ${{ github.token }}
+          PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
         run: |
           pip install -q edge-tts
           node tiktok/film.js
+          if [ "${{ github.event_name }}" = "schedule" ]; then node tiktok/film.js --ciekawostki 1; fi
           node tiktok/do_pobrania.js
           node tiktok/publikuj_tiktok.js
 

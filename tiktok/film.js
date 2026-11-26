@@ -1,12 +1,14 @@
 // Robi pionowe filmiki (1080x1920) z newsów: lektor + napisy + zdjęcie z przybliżeniem.
 //   node tiktok/film.js          -> newsy z dziś/wczoraj, które nie mają jeszcze filmu
 //   node tiktok/film.js 35       -> tylko post o id 35 (nadpisuje)
+//   node tiktok/film.js --viral [ile]  -> filmy z tiktok/viral.json (krótkie, z haczykiem)
+//   node tiktok/film.js --ciekawostki [ile] -> ciekawostki bez filmu (domyślnie 1)
 // Wynik: tiktok/filmy/035.mp4
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import puppeteer from "puppeteer-core";
-import { czcionka, KONTO, PALETY_NEWS } from "../szablon.js";
+import { czcionka, KONTO, PALETY, PALETY_NEWS } from "../szablon.js";
 
 const W = 1080, H = 1920, FPS = 30;
 const GLOS = process.env.TTS_GLOS || "pl-PL-MarekNeural";
@@ -31,22 +33,34 @@ const czysty = (s) => s.replace(/\*+/g, "").replace(/\s+/g, " ").trim();
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const norm = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
 
-const posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
-const arg = process.argv[2] ? Number(process.argv[2]) : null;
+const trybViral = process.argv[2] === "--viral";
+const PLIK_POSTOW = trybViral ? "tiktok/viral.json" : "posts.json";
+const posts = JSON.parse(fs.readFileSync(PLIK_POSTOW, "utf8"));
+const trybCiek = process.argv[2] === "--ciekawostki" || trybViral;
+const ileCiek = trybCiek ? Number(process.argv[3] || 1) : 0;
+const arg = process.argv[2] && !trybCiek ? Number(process.argv[2]) : null;
 const dzis = new Date();
 const ostatnie = [0, 1].map((d) => new Date(dzis - d * 864e5).toISOString().slice(0, 10));
 
 fs.mkdirSync("tiktok/filmy", { recursive: true });
-const TMP = "tiktok/tmp";
+const TMP = `tiktok/tmp_${process.argv[2] || "x"}`.replace(/-/g, "");
 
 const naStronie = fs.existsSync("docs/filmy.json") ? JSON.parse(fs.readFileSync("docs/filmy.json", "utf8")).map((x) => x.id) : [];
-const doZrobienia = posts.filter((p) => {
+const maFilm = (p) => fs.existsSync(`tiktok/filmy/${nr3(p.id)}.mp4`) || fs.existsSync(`tiktok/wyslane/${nr3(p.id)}.json`) || naStronie.includes(p.id);
+const doZrobienia = trybCiek
+  ? posts.filter((p) => !p.typ && !maFilm(p))
+      .slice(0, ileCiek)
+  : posts.filter((p) => {
   if (arg !== null) return p.id === arg;
   return p.typ === "news" && ostatnie.includes(p.data) &&
     !fs.existsSync(`tiktok/filmy/${nr3(p.id)}.mp4`) && !fs.existsSync(`tiktok/wyslane/${nr3(p.id)}.json`) && !naStronie.includes(p.id) &&
     fs.existsSync(`zdjecia/${nr3(p.id)}.jpg`);
 });
-if (!doZrobienia.length) { console.log("Brak nowych newsów do filmów."); process.exit(0); }
+if (!doZrobienia.length) { console.log("Brak nowych postów do filmów."); process.exit(0); }
+// brakujące zdjęcia (np. w chmurze) – dociągamy z Pixabay
+for (const p of doZrobienia)
+  if (!fs.existsSync(`zdjecia/${nr3(p.id)}.jpg`))
+    try { execFileSync("node", ["pobierz_zdjecia.js", String(p.id)], { stdio: "inherit", env: { ...process.env, POSTY: PLIK_POSTOW } }); } catch {}
 
 const FONTS = czcionka("inter", "Inter") + czcionka("inter-tight", "Inter Tight");
 const CSS = `<style>${FONTS}</style><style>
@@ -71,7 +85,7 @@ h1{margin-top:30px;font:900 76px/1.04 'Inter Tight';letter-spacing:-.025em;text-
 </style></head><body>
 <div class="g1"></div><div class="g2"></div>
 <div class="top">
-  <div class="badge"><i></i>News · ${esc(p.region || "Z kraju")}</div>
+  <div class="badge"><i></i>${p.typ === "news" ? `News · ${esc(p.region || "Z kraju")}` : esc(p.etykieta || "Czy wiesz, że…")}</div>
   <h1>${esc(p.tytul).replace(/\*(.+?)\*/g, "<em>$1</em>")}</h1>
   ${p.zrodlo ? `<div class="zr">Źródło: ${esc(p.zrodlo)}</div>` : ""}
 </div>
@@ -123,13 +137,19 @@ for (const p of doZrobienia) {
   const nr = nr3(p.id);
   const foto = `zdjecia/${nr}.jpg`;
   if (!fs.existsSync(foto)) { console.log(`post ${p.id}: brak zdjęcia – pomijam`); continue; }
-  const pal = PALETY_NEWS[(p.id - 1) % PALETY_NEWS.length];
+  const lista = p.typ === "news" ? PALETY_NEWS : PALETY;
+  const pal = lista[(((p.id - 1) % lista.length) + lista.length) % lista.length];
   fs.rmSync(TMP, { recursive: true, force: true });
   fs.mkdirSync(TMP, { recursive: true });
 
   // 1. lektor
-  const tekst = `${czysty(p.zajawka || p.tytul)}. ${czysty(p.tekst)} Obserwuj kropkę wiedzy, żeby nic Cię nie ominęło.`
-    .replace(/\.\./g, ".");
+  const zaj = czysty(p.zajawka || p.tytul);
+  const wstep = p.hak ? czysty(p.hak)
+    : p.typ === "news" ? zaj
+    : p.etykieta ? `${czysty(p.tytul)}. ${zaj}`
+    : `Czy wiesz, że ${zaj[0].toLowerCase()}${zaj.slice(1)}?`;
+  const koniec = p.typ === "news" ? "Obserwuj kropkę wiedzy, żeby nic Cię nie ominęło." : "Obserwuj kropkę wiedzy po więcej ciekawostek.";
+  const tekst = `${wstep}. ${czysty(p.tekst)} ${koniec}`.replace(/([.?!])\./g, "$1");
   fs.writeFileSync(`${TMP}/tekst.txt`, tekst);
   execFileSync(PYTHON, ["tiktok/lektor.py", `${TMP}/tekst.txt`, `${TMP}/glos.mp3`, `${TMP}/slowa.json`, GLOS], { stdio: "inherit" });
   const slowa = JSON.parse(fs.readFileSync(`${TMP}/slowa.json`, "utf8"));

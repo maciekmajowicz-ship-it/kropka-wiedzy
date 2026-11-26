@@ -219,5 +219,17 @@
     "tytul": "Laser kontra dron Gierań",
     "tekst": "Rosyjski dron odrzutowy **Gierań** został po raz pierwszy zestrzelony nad Ukrainą za pomocą **lasera bojowego**. Informację przekazał doradca prezydenta Ukrainy ds. technologii obronnych Serhij Beskrestnow. Według niego system **Blysk** ukraińskiej firmy Carmine Sky chronił obiekt infrastruktury krytycznej.\n\nDoradca podkreślił, że to **pierwszy potwierdzony taki przypadek**, ale na produkcję seryjną jest jeszcze za wcześnie – lasery są drogie, a system nadal przechodzi testy.",
     "zrodlo": "RMF FM, TVN24"
+  },
+  {
+    "id": 26,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-26",
+    "zdjecie": "house keys mortgage",
+    "emoji": "🏦",
+    "zajawka": "TSUE rozstrzygnął spór o *WIBOR* – lepsze wieści *dla banków*",
+    "tytul": "Wyrok TSUE w sprawie WIBOR-u",
+    "tekst": "Trybunał Sprawiedliwości UE odpowiedział w czwartek na pytania **Sądu Okręgowego w Krakowie** w sprawie kredytów hipotecznych w złotych opartych na WIBOR. Według Trybunału **brak górnej granicy wzrostu WIBOR-u** sam w sobie nie oznacza, że zapis o zmiennym oprocentowaniu jest nieuczciwy wobec klienta.\n\nTSUE zaznaczył jednak, że bank musi rzetelnie **uprzedzić klienta o ryzyku** dużego wzrostu oprocentowania, a ocena konkretnej umowy należy do polskiego sądu. Związek Banków Polskich przyjął wyrok z zadowoleniem. To **kolejne orzeczenie** w tej sprawie – WIBOR jest stopniowo zastępowany wskaźnikiem POLSTR.",
+    "zrodlo": "RMF FM, Rzeczpospolita, Interia"
   }
 ]

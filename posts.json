@@ -267,5 +267,42 @@
     "tytul": "Areszt dla byłego agenta CBA",
     "tekst": "Warszawski sąd aresztował na **trzy miesiące** Artura Ch., byłego funkcjonariusza CBA, podejrzanego w śledztwie dotyczącym giełdy kryptowalut Zondacrypto. Według prokuratury miał przyjąć **blisko 650 tys. zł** w zamian za pośrednictwo w sprawach giełdy, powołując się na wpływy w Sejmie i Kancelarii Prezydenta.\n\nMężczyzna usłyszał **dwa zarzuty**: płatnej protekcji i działalności detektywistycznej bez licencji. Nie przyznał się do winy, a obrona zapowiada zażalenie. Śledztwo trwa od kwietnia, a do prokuratury wpłynęło **kilka tysięcy** zawiadomień.",
     "zrodlo": "Polsat News, RMF FM, TVN24"
+  },
+  {
+    "id": 30,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-26",
+    "zdjecie": "radiation warning sign",
+    "emoji": "☢️",
+    "zajawka": "Przy krakowskim szpitalu wykryto *radioaktywne odpady*",
+    "tytul": "Promieniowanie w kontenerze na śmieci",
+    "tekst": "W czwartek rano czujnik w śmieciarce odbierającej odpady ze **Szpitala Rydygiera w Krakowie** wykrył materiał promieniotwórczy. Według rzeczniczki szpitala norma była przekroczona **o 300 procent**. Strażacy wyznaczyli strefę bezpieczeństwa wokół kontenera, a na miejsce wezwano sanepid.\n\nSzpital zapewnia, że kontener nie stał przy budynku z pacjentami i **nikomu nic nie grozi** – placówki nie ewakuowano. O incydencie powiadomiono Państwową Agencję Atomistyki, która ma pomóc wyjaśnić, skąd wziął się niebezpieczny odpad.",
+    "zrodlo": "TVN24, RMF FM"
+  },
+  {
+    "id": 31,
+    "zdjecie": "old steam train",
+    "emoji": "🚂",
+    "etykieta": "Historia kryminalna",
+    "zajawka": "w 1963 r. gang zatrzymał pociąg i zabrał *2,6 mln funtów*",
+    "tytul": "Wielki napad na pociąg",
+    "tekst": "W nocy **8 sierpnia 1963 roku** w hrabstwie Buckinghamshire w Anglii gang przestawił sygnał na torach i zatrzymał pociąg pocztowy jadący z Glasgow do Londynu. Złodzieje zabrali worki z pieniędzmi – łącznie około **2,6 mln funtów**, co było wtedy ogromną fortuną.\n\nWiększość członków gangu szybko złapano i skazano na wysokie wyroki. Najsłynniejszy z nich, **Ronnie Biggs**, uciekł z więzienia w 1965 roku i przez ponad 30 lat ukrywał się za granicą. Do Wielkiej Brytanii wrócił dobrowolnie dopiero w 2001 roku."
+  },
+  {
+    "id": 32,
+    "zdjecie": "baby feet",
+    "emoji": "🦴",
+    "zajawka": "noworodek ma *więcej kości* niż dorosły człowiek",
+    "tytul": "Kości, które się zrastają",
+    "tekst": "Szkielet dorosłego człowieka składa się zwykle z **206 kości**. Tymczasem noworodek ma ich około **300** – wiele z nich to jednak częściowo chrzęstne elementy, które z wiekiem się zrastają.\n\nDobrym przykładem jest czaszka: u niemowlęcia jej kości są oddzielone miękkimi miejscami zwanymi **ciemiączkami**, dzięki czemu główka może przejść przez kanał rodny, a mózg swobodnie rosnąć. Podobnie zrasta się m.in. kość krzyżowa. Proces kostnienia trwa aż do wczesnej dorosłości."
+  },
+  {
+    "id": 33,
+    "zdjecie": "tardigrade microscope",
+    "emoji": "🔬",
+    "zajawka": "niesporczaki *przeżyły w otwartym kosmosie*",
+    "tytul": "Najtwardsze zwierzęta świata",
+    "tekst": "Niesporczaki to mikroskopijne zwierzęta, zwykle krótsze niż **1 milimetr**, żyjące m.in. w mchach. W 2007 roku naukowcy wysłali wysuszone niesporczaki na orbitę na pokładzie satelity **Foton-M3** i wystawili je na próżnię kosmiczną. Po powrocie na Ziemię wiele z nich ożyło i rozmnażało się.\n\nSekretem jest stan zwany **kryptobiozą**: zwierzę traci prawie całą wodę i niemal zatrzymuje metabolizm. W takiej formie znosi skrajne mrozy, wysychanie i silne promieniowanie, a po nawodnieniu wraca do życia."
   }
 ]

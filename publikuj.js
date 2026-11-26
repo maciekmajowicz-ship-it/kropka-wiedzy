@@ -18,7 +18,9 @@ const args = process.argv.slice(2);
 const TEST = args.includes("--test");
 const API = "https://graph.facebook.com/v23.0";
 
-const GODZINY_CIEKAWOSTEK = [6, 9, 12, 15, 18, 21, 23];
+const GODZINY_STALE = [6, 9, 12, 15, 18, 21, 23];
+// wyjątki na pojedyncze dni (data PL -> godziny)
+const GODZINY_WYJATKI = { "2026-11-26": [11, 14, 17, 20, 23] };
 const MAX_NEWSOW_DZIENNIE = 6;
 const HASHTAGI_FAKT = "#ciekawostki #czywiesz #wiedza #ciekawostka #faktyciekawostki #nauka #kropkawiedzy";
 const HASHTAGI_NEWS = "#wiadomosci #news #polska #swiat #informacje #kropkawiedzy";
@@ -38,6 +40,7 @@ const czasPL = (d, o) => new Date(d).toLocaleString("sv-SE", { timeZone: "Europe
 const dzienPL = (d) => czasPL(d, { year: "numeric", month: "2-digit", day: "2-digit" });
 const dzis = dzienPL(teraz);
 const godz = Number(czasPL(teraz, { hour: "2-digit", hour12: false }));
+const GODZINY_CIEKAWOSTEK = GODZINY_WYJATKI[dzis] || GODZINY_STALE;
 
 const gotowy = (p) =>
   !opublikowane.some((o) => o.id === p.id) && fs.existsSync(`output/${nr3(p.id)}_1.jpg`);

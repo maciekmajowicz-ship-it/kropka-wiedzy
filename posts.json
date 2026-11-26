@@ -195,5 +195,17 @@
     "zajawka": "Mona Lisa stała się sławna *dzięki kradzieży*",
     "tytul": "Kradzież stulecia w Luwrze",
     "tekst": "**21 sierpnia 1911 roku** Mona Lisa zniknęła z Luwru. Ukradł ją **Vincenzo Peruggia**, włoski pracownik muzeum, który schował się w budynku i wyniósł obraz pod ubraniem.\n\nPrzez **ponad 2 lata** nikt nie wiedział, gdzie jest. Peruggia wpadł w **1913 roku**, gdy próbował sprzedać obraz we Florencji. Gazety na całym świecie pisały o kradzieży, a Mona Lisa stała się **najsłynniejszym obrazem świata**."
+  },
+  {
+    "id": 24,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-26",
+    "zdjecie": "laser beam night sky",
+    "emoji": "⚡",
+    "zajawka": "Ukraina zestrzeliła drona *laserem bojowym* – *po raz pierwszy*",
+    "tytul": "Laser kontra dron Gierań",
+    "tekst": "Rosyjski dron odrzutowy **Gierań** został po raz pierwszy zestrzelony nad Ukrainą za pomocą **lasera bojowego**. Informację przekazał doradca prezydenta Ukrainy ds. technologii obronnych Serhij Beskrestnow. Według niego system **Blysk** ukraińskiej firmy Carmine Sky chronił obiekt infrastruktury krytycznej.\n\nDoradca podkreślił, że to **pierwszy potwierdzony taki przypadek**, ale na produkcję seryjną jest jeszcze za wcześnie – lasery są drogie, a system nadal przechodzi testy.",
+    "zrodlo": "RMF FM, TVN24"
   }
 ]

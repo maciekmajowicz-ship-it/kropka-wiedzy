@@ -18,7 +18,7 @@ const args = process.argv.slice(2);
 const TEST = args.includes("--test");
 const API = "https://graph.facebook.com/v23.0";
 
-const GODZINY_STALE = [7, 16, 21];
+const GODZINY_STALE = [7, 15, 21];
 // wyjątki na pojedyncze dni (data PL -> godziny)
 const GODZINY_WYJATKI = {};
 const MAX_NEWSOW_DZIENNIE = 30;

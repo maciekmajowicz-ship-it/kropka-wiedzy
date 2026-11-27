@@ -532,5 +532,17 @@
     "tytul": "Żółwie w bagażu na Schiphol",
     "tekst": "Holenderscy celnicy na lotnisku **Schiphol** w Amsterdamie znaleźli w bagażu podróżnego **26 krytycznie zagrożonych żółwi** z gatunku Kinosternon vogti. Mężczyzna leciał 21 listopada z Meksyku do Hongkongu. Gady były oklejone taśmą, żeby się nie ruszały – większość ukryto w pudełku z zabawkowym autkiem, resztę w skarpetce.\n\nWedług holenderskiego urzędu NVWA na wolności żyje **zaledwie ok. 300** takich żółwi. Wszystkie przeżyły i trafiły do specjalistycznego ośrodka, a podróżny został **zatrzymany**. Trwa śledztwo.",
     "zrodlo": "TVN24, BBC, Anadolu"
+  },
+  {
+    "id": 54,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-27",
+    "zdjecie": "airplane airport terminal",
+    "emoji": "✈️",
+    "zajawka": "Norweskie linie *Norse* zbankrutowały – *wszystkie loty* odwołane",
+    "tytul": "Upadek linii lotniczych Norse",
+    "tekst": "Norweski przewoźnik dalekodystansowy Norse ogłosił w piątek **upadłość**. Firma odwołała wszystkie rejsy i przestała sprzedawać bilety, a pracę straci **ponad 300 osób**. Kilka godzin wcześniej leasingodawcy wypowiedzieli umowy na **wszystkie 12 Dreamlinerów** we flocie.\n\nLinie działały od 2022 roku i miały być tanią alternatywą na długich trasach, ale wciąż traciły pieniądze – w pierwszym półroczu blisko **1 mld koron**. Pasażerowie, w tym lecący na święta do Tajlandii, muszą sami szukać innych lotów. Kupujący kartą mogą starać się o zwrot w banku.",
+    "zrodlo": "TVN24, RMF FM"
   }
 ]

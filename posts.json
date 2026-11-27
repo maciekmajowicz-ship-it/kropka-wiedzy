@@ -496,5 +496,17 @@
     "tytul": "Włamanie do systemu US Air Force",
     "tekst": "Według agencji Reuters, która powołuje się na anonimowe źródła, hakerzy włamali się do **Cloud One** – głównej platformy chmurowej amerykańskich sił powietrznych. Mieli wykorzystać **lukę w oprogramowaniu**, a włamanie wykryto w ostatnim miesiącu przy pracach modernizacyjnych. Nie wiadomo, kto stoi za atakiem ani czy wyciekły dane.\n\nPlatforma działa od 2017 r. i obsługuje m.in. logistykę oraz system śledzący amunicję w **ponad 200 lokalizacjach**. Skutki bada Dowództwo Cybernetyczne USA. Lotnictwo nie komentuje sprawy, zapewnia jedynie, że stale chroni swoje sieci.",
     "zrodlo": "TVN24, RMF24 (za Reuters)"
+  },
+  {
+    "id": 51,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-27",
+    "zdjecie": "tatra mountains lake winter",
+    "emoji": "🐻",
+    "zajawka": "Ktoś rozpylił *gaz na niedźwiedzie* w schronisku nad *Morskim Okiem*",
+    "tytul": "Gaz w schronisku nad Morskim Okiem",
+    "tekst": "W piątek wczesnym popołudniem w schronisku nad Morskim Okiem ktoś rozpylił substancję, którą była najpewniej **gaz do odstraszania niedźwiedzi**. Jadalnia była wtedy pełna gości. Według gospodarzy obiektu **wszystkich turystów wyprowadzono na zewnątrz** i nikomu nic się nie stało.\n\nZ nagrań monitoringu nie udało się ustalić, kto to zrobił – osoba odpowiedzialna po prostu odeszła. Prowadzący schronisko nazwali to zachowanie **skrajnie nieodpowiedzialnym** i podkreślili, że to pierwsze takie zdarzenie w ich obiekcie. Ostrzegli, że gaz mógł być **groźny np. dla astmatyków**.",
+    "zrodlo": "RMF FM, Radio Kraków"
   }
 ]

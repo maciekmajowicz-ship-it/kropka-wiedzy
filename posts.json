@@ -484,5 +484,17 @@
     "tytul": "Pegasus: zarzut dla byłego szefa policji",
     "tekst": "Prokuratura Krajowa przedstawiła **zarzut niedopełnienia obowiązków** byłemu komendantowi głównemu policji Jarosławowi S. Według śledczych dopuścił on do używania przez policję systemu **Pegasus** bez wymaganej **akredytacji bezpieczeństwa teleinformatycznego**.\n\nJarosław S. sam stawił się na wezwanie prokuratury. **Nie przyznał się do winy** i odmówił składania wyjaśnień. Według rzecznika Prokuratury Krajowej nie zastosowano wobec niego środków zapobiegawczych. Śledztwo w sprawie Pegasusa trwa.",
     "zrodlo": "TVN24, RMF FM"
+  },
+  {
+    "id": 50,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-27",
+    "zdjecie": "hacker computer code",
+    "emoji": "💻",
+    "zajawka": "Hakerzy dostali się do *chmury lotnictwa USA* – sprawą zajmuje się Cyber Command",
+    "tytul": "Włamanie do systemu US Air Force",
+    "tekst": "Według agencji Reuters, która powołuje się na anonimowe źródła, hakerzy włamali się do **Cloud One** – głównej platformy chmurowej amerykańskich sił powietrznych. Mieli wykorzystać **lukę w oprogramowaniu**, a włamanie wykryto w ostatnim miesiącu przy pracach modernizacyjnych. Nie wiadomo, kto stoi za atakiem ani czy wyciekły dane.\n\nPlatforma działa od 2017 r. i obsługuje m.in. logistykę oraz system śledzący amunicję w **ponad 200 lokalizacjach**. Skutki bada Dowództwo Cybernetyczne USA. Lotnictwo nie komentuje sprawy, zapewnia jedynie, że stale chroni swoje sieci.",
+    "zrodlo": "TVN24, RMF24 (za Reuters)"
   }
 ]

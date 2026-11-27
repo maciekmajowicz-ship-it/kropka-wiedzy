@@ -77,7 +77,7 @@
   },
   {
     "id": 8,
-    "zdjecie": "giraffe",
+    "zdjecie": "giraffe neck",
     "emoji": "🦒",
     "zajawka": "Żyrafa ma w szyi *tyle samo kręgów co człowiek*",
     "tytul": "Długa szyja, ta sama liczba kości",
@@ -85,7 +85,7 @@
   },
   {
     "id": 9,
-    "zdjecie": "great white shark",
+    "zdjecie": "shark underwater",
     "emoji": "🦈",
     "zajawka": "Rekiny są *starsze niż drzewa*",
     "tytul": "Żywe skamieliny oceanów",
@@ -109,7 +109,7 @@
   },
   {
     "id": 12,
-    "zdjecie": "bee honey flower",
+    "zdjecie": "honey bee flower",
     "emoji": "🐝",
     "zajawka": "Jedna pszczoła przez całe życie robi *mniej niż łyżeczkę miodu*",
     "tytul": "Praca całego roju",
@@ -125,7 +125,7 @@
   },
   {
     "id": 14,
-    "zdjecie": "salt mine",
+    "zdjecie": "salt mine chapel",
     "emoji": "🧂",
     "zajawka": "W Wieliczce jest *kaplica w całości wykuta w soli*",
     "tytul": "Podziemna katedra",
@@ -133,7 +133,7 @@
   },
   {
     "id": 15,
-    "zdjecie": "old laboratory",
+    "zdjecie": "laboratory radioactive sign",
     "emoji": "⚗️",
     "zajawka": "Notatki Marii Skłodowskiej-Curie *wciąż są radioaktywne*",
     "tytul": "Niebezpieczne zeszyty",
@@ -141,7 +141,7 @@
   },
   {
     "id": 16,
-    "zdjecie": "puzzle cube colorful",
+    "zdjecie": "rubik cube",
     "emoji": "🧩",
     "zajawka": "Kostka Rubika ma *43 tryliony* możliwych ułożeń",
     "tytul": "Mała kostka, ogromne liczby",
@@ -149,7 +149,7 @@
   },
   {
     "id": 17,
-    "zdjecie": "humpback whale ocean",
+    "zdjecie": "blue whale ocean",
     "emoji": "🐋",
     "zajawka": "Serce płetwala błękitnego waży *około 180 kg*",
     "tytul": "Największe serce na świecie",
@@ -157,7 +157,7 @@
   },
   {
     "id": 18,
-    "zdjecie": "mountain andes",
+    "zdjecie": "mountain peak summit",
     "emoji": "🏔️",
     "zajawka": "Najdalej od środka Ziemi *nie jest Mount Everest*",
     "tytul": "Ziemia nie jest idealną kulą",
@@ -165,7 +165,7 @@
   },
   {
     "id": 19,
-    "zdjecie": "moon",
+    "zdjecie": "moon night sky",
     "emoji": "🌕",
     "zajawka": "Australia jest *szersza niż Księżyc*",
     "tytul": "Kontynent kontra Księżyc",
@@ -173,7 +173,7 @@
   },
   {
     "id": 20,
-    "zdjecie": "goldfish",
+    "zdjecie": "goldfish aquarium",
     "emoji": "🐠",
     "zajawka": "Złota rybka *nie ma* 3-sekundowej pamięci",
     "tytul": "Mit, który trzeba obalić",
@@ -181,7 +181,7 @@
   },
   {
     "id": 21,
-    "zdjecie": "napoleon",
+    "zdjecie": "napoleonic statue paris",
     "emoji": "🎖️",
     "zajawka": "Napoleon wcale *nie był niski*",
     "tytul": "Najsłynniejszy mit o wzroście",
@@ -190,7 +190,7 @@
   {
     "id": 22,
     "etykieta": "Historia kryminalna",
-    "zdjecie": "museum painting gallery",
+    "zdjecie": "louvre museum paris",
     "emoji": "🖼️",
     "zajawka": "Mona Lisa stała się sławna *dzięki kradzieży*",
     "tytul": "Kradzież stulecia w Luwrze",
@@ -270,7 +270,7 @@
   },
   {
     "id": 31,
-    "zdjecie": "old steam train",
+    "zdjecie": "steam train night",
     "emoji": "🚂",
     "etykieta": "Historia kryminalna",
     "zajawka": "w 1963 r. gang zatrzymał pociąg i zabrał *2,6 mln funtów*",
@@ -279,7 +279,7 @@
   },
   {
     "id": 32,
-    "zdjecie": "baby feet",
+    "zdjecie": "newborn baby feet",
     "emoji": "🦴",
     "zajawka": "noworodek ma *więcej kości* niż dorosły człowiek",
     "tytul": "Kości, które się zrastają",

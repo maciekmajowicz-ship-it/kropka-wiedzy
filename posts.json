@@ -472,5 +472,17 @@
     "tytul": "Rok z nerką od świni",
     "tekst": "W bostońskim szpitalu Massachusetts General 58-letnia mieszkanka stanu New Hampshire przekroczyła **rok z nerką od genetycznie zmodyfikowanej świni**. Według lekarzy to pierwszy taki przypadek na świecie. Przeszczep wykonano **22 listopada 2025 r.**, a pacjentka od tamtej pory **nie potrzebuje dializ**.\n\nPoprzedni rekord wynosił 271 dni. Przeszczepy narządów od zwierząt wciąż są eksperymentem, ale od 2027 r. w USA ma ruszyć badanie kliniczne z udziałem **33 pacjentów**. Lekarze podkreślają, że rok to ważny krok, a nie meta.",
     "zrodlo": "RMF FM, CBC"
+  },
+  {
+    "id": 49,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-27",
+    "zdjecie": "police car night city",
+    "emoji": "🕵️",
+    "zajawka": "Były komendant główny policji z *zarzutem* w sprawie *Pegasusa*",
+    "tytul": "Pegasus: zarzut dla byłego szefa policji",
+    "tekst": "Prokuratura Krajowa przedstawiła **zarzut niedopełnienia obowiązków** byłemu komendantowi głównemu policji Jarosławowi S. Według śledczych dopuścił on do używania przez policję systemu **Pegasus** bez wymaganej **akredytacji bezpieczeństwa teleinformatycznego**.\n\nJarosław S. sam stawił się na wezwanie prokuratury. **Nie przyznał się do winy** i odmówił składania wyjaśnień. Według rzecznika Prokuratury Krajowej nie zastosowano wobec niego środków zapobiegawczych. Śledztwo w sprawie Pegasusa trwa.",
+    "zrodlo": "TVN24, RMF FM"
   }
 ]

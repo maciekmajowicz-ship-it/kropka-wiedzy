@@ -508,5 +508,17 @@
     "tytul": "Gaz w schronisku nad Morskim Okiem",
     "tekst": "W piątek wczesnym popołudniem w schronisku nad Morskim Okiem ktoś rozpylił substancję, którą była najpewniej **gaz do odstraszania niedźwiedzi**. Jadalnia była wtedy pełna gości. Według gospodarzy obiektu **wszystkich turystów wyprowadzono na zewnątrz** i nikomu nic się nie stało.\n\nZ nagrań monitoringu nie udało się ustalić, kto to zrobił – osoba odpowiedzialna po prostu odeszła. Prowadzący schronisko nazwali to zachowanie **skrajnie nieodpowiedzialnym** i podkreślili, że to pierwsze takie zdarzenie w ich obiekcie. Ostrzegli, że gaz mógł być **groźny np. dla astmatyków**.",
     "zrodlo": "RMF FM, Radio Kraków"
+  },
+  {
+    "id": 52,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-27",
+    "zdjecie": "coastal city aerial",
+    "emoji": "🛰️",
+    "zajawka": "Satelity pokazały, że *Lagos i Aleksandria* powoli *zapadają się*",
+    "tytul": "Zapadające się miasta Afryki",
+    "tekst": "Naukowcy z Virginia Tech przeanalizowali tysiące radarowych pomiarów z europejskiego satelity **Sentinel-1** i sprawdzili, jak porusza się grunt w **20 nadmorskich miastach Afryki**. Najszybciej osiada ziemia w egipskiej Aleksandrii i nigeryjskim Lagos – średnio o **ok. 6 i 5 mm rocznie**.\n\nWedług autorów badania, opublikowanego w „Science Advances”, za zjawiskiem stoją głównie lokalne przyczyny, takie jak **pobieranie wód gruntowych** i rozbudowa miast. To zwiększa ryzyko powodzi, ale daje też szansę, by mu przeciwdziałać.",
+    "zrodlo": "RMF FM, BBC"
   }
 ]

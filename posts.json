@@ -604,5 +604,17 @@
     "tytul": "Katastrofa śmigłowca w Peru",
     "tekst": "W nocy z czwartku na piątek w peruwiańskiej dżungli rozbił się **wojskowy śmigłowiec Mi-17**. Na pokładzie było dziewięciu żołnierzy – według władz zginęło **ośmiu z nich**, a przeżył tylko pilot, którego przewieziono na leczenie do Limy.\n\nWedług ministra obrony Peru podczas lądowania **łopata wirnika zahaczyła o drzewo**. Maszyna przerzucała oddział walczący z grupami zbrojnymi wywodzącymi się ze **Świetlistego Szlaku** w regionie VRAEM. Przyczyny wyjaśni śledztwo.",
     "zrodlo": "RMF FM, Wirtualna Polska, BBC"
+  },
+  {
+    "id": 60,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-28",
+    "zdjecie": "cargo truck highway night",
+    "emoji": "🚚",
+    "zajawka": "Tony *kokainy* ukryte w *złomie i płytkach* – siedem osób w areszcie",
+    "tytul": "Kokaina w ciężarówkach ze złomem",
+    "tekst": "Stołeczna policja zatrzymała w Warszawie, okolicach i Wielkopolsce **siedem osób w wieku 40–56 lat**. Według śledczych grupa przemycała narkotyki między Hiszpanią, Holandią, Polską i Wielką Brytanią – w zarzutach mowa o **tonach kokainy**, ukrytych m.in. w transportach złomu i paletach z płytkami ceramicznymi.\n\nPodczas przeszukań zabezpieczono **pięć sztuk broni**, ponad tysiąc nabojów i ok. 145 tys. zł w gotówce. Wszyscy podejrzani usłyszeli zarzuty i decyzją sądu trafili do **aresztu na trzy miesiące**. Grozi im nawet 20 lat więzienia.",
+    "zrodlo": "TVN24, WP"
   }
 ]

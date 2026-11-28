@@ -616,5 +616,17 @@
     "tytul": "Kokaina w ciężarówkach ze złomem",
     "tekst": "Stołeczna policja zatrzymała w Warszawie, okolicach i Wielkopolsce **siedem osób w wieku 40–56 lat**. Według śledczych grupa przemycała narkotyki między Hiszpanią, Holandią, Polską i Wielką Brytanią – w zarzutach mowa o **tonach kokainy**, ukrytych m.in. w transportach złomu i paletach z płytkami ceramicznymi.\n\nPodczas przeszukań zabezpieczono **pięć sztuk broni**, ponad tysiąc nabojów i ok. 145 tys. zł w gotówce. Wszyscy podejrzani usłyszeli zarzuty i decyzją sądu trafili do **aresztu na trzy miesiące**. Grozi im nawet 20 lat więzienia.",
     "zrodlo": "TVN24, WP"
+  },
+  {
+    "id": 61,
+    "typ": "news",
+    "region": "ZE ŚWIATA",
+    "data": "2026-11-28",
+    "zdjecie": "smartphone technology dark",
+    "emoji": "⚖️",
+    "zajawka": "OpenAI kontratakuje: twórca ChatGPT *pozwał Apple* o *tajemnice firmy*",
+    "tytul": "OpenAI kontra Apple w sądzie",
+    "tekst": "OpenAI złożyło w federalnym sądzie w Kalifornii **pozew wzajemny przeciwko Apple**. Twórca ChatGPT zarzuca producentowi iPhone’a m.in. **kradzież tajemnic handlowych** oraz naciskanie na dostawców, by nie pracowali przy sprzęcie OpenAI. Apple odrzuca zarzuty i nazywa je próbą odwrócenia uwagi od własnego pozwu.\n\nTo odpowiedź na sprawę z **lipca 2026 r.**, gdy Apple oskarżyło OpenAI i dwóch swoich byłych pracowników o wykorzystanie poufnych informacji. OpenAI pracuje nad **własnymi urządzeniami z AI**.",
+    "zrodlo": "TVN24, CNN, Rzeczpospolita"
   }
 ]

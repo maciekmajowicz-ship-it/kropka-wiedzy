@@ -568,5 +568,17 @@
     "tytul": "Koszykarze z awansem na MŚ",
     "tekst": "Reprezentacja Polski w koszykówce zapewniła sobie **udział w mistrzostwach świata 2027 w Katarze**. Awans przypieczętowała wygrana Niemiec z Łotwą 78:76, a w piątkowym meczu w Gliwicach Polacy przegrali z Chorwacją 69:80. Spotkanie obejrzało **13 053 widzów** – to nowy krajowy rekord frekwencji na meczu koszykówki.\n\nBędzie to **trzeci start Polaków na mundialu**. W 1967 roku w Urugwaju zajęli piąte miejsce, a w 2019 roku w Chinach – ósme.",
     "zrodlo": "RMF FM, ESKA"
+  },
+  {
+    "id": 57,
+    "typ": "news",
+    "region": "Z POLSKI",
+    "data": "2026-11-28",
+    "zdjecie": "railway tracks train station",
+    "emoji": "🚆",
+    "zajawka": "Dwa pociągi na *jednym torze* w Katowicach – dzieliło je *200 metrów*",
+    "tytul": "Dwa pociągi na jednym torze",
+    "tekst": "W piątek około **8:30** pociąg regionalny z Krakowa wjechał na stacji **Katowice Zawodzie** na tor, na którym stał już skład dalekobieżny jadący z Bohumina do Przemyśla. Maszynista w porę zauważył zagrożenie i zahamował – według przewoźnika Polregio pociągi dzieliło około **200 metrów**. Nikt nie ucierpiał.\n\nWedług PKP Polskich Linii Kolejowych przyczyną był **błąd nastawniczego**, który źle przygotował drogę przebiegu. Ruch w rejonie stacji wstrzymano do 10:00, a przewoźnicy honorowali swoje bilety. Sprawę wyjaśni komisja.",
+    "zrodlo": "TVN24, WP"
   }
 ]
